@@ -1,0 +1,355 @@
+@import "colours.scss";
+
+.swiper-pagination-bullets {
+  bottom: 0px !important;
+}
+html {
+  background-color: $first-place-blue;
+}
+.swiper-pagination-bullet {
+  opacity: 1!important;
+}
+.native-input {
+  padding-top: 15px !important;
+  padding-right: 0 !important;
+}
+
+.password .native-input {
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 24px);
+  background-position-y: 50%;
+  padding-right: 58px !important;
+  &[type="password"] {
+    letter-spacing: 4px;
+    padding-top: 18px !important;
+  }
+}
+.hide-password .native-input {
+  background-image: url('assets/create-account/eye-closed-focus.svg');
+}
+.show-password .native-input {
+  background-image: url('assets/create-account/eye-open-focus.svg');
+}
+.searchbar-input{
+  padding-top: 8px !important;
+}
+.error {
+  .native-input {
+    border: 1px solid $bad-dog-red !important;
+    &:focus, &:active {
+      border: 1px solid $bad-dog-red !important;
+      box-shadow: none !important;
+    }
+  }
+  &.weight-details {
+    .native-input {
+      border: none !important; 
+      &:focus, &:active {
+      border: none !important;
+      }
+    }
+  }
+}
+
+.success .native-input {
+  border: 1px solid $bright-green !important;
+  &:focus, &:active {
+    border: 1px solid $bright-green !important;
+    box-shadow: none !important;
+  }
+}
+
+.weight .native-input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.native-input, .searchbar-input {
+  height: 48px !important;
+}
+.native-textarea {
+  padding: 16px !important;
+}
+.native-input, .searchbar-input, .native-textarea {
+  border: 1px solid $grey-4 !important;
+  border-radius: 4px !important;
+  color: $night-time-blue !important;
+  font-family: 'Aeonik-Regular' !important;
+  font-size: 16px !important;
+  font-size: 1.6rem !important;
+  &::placeholder {
+    color: $grey-3 !important;
+  }
+  &:focus, &:active {
+    border: 1px solid $first-place-blue !important;
+    color: $night-time-blue !important;
+    box-shadow: 0px 0px 4px rgba(31, 46, 113, 0.5) !important;
+  }
+}
+ion-content {
+  --background: #f0f0f2;
+}
+.searchbar-input-container {
+  height: 48px !important;
+  input {
+    box-shadow: none !important;
+  }
+  button {
+    &.searchbar-clear-button {
+      width: auto;
+      padding-right: 19px;
+      right: 0px !important;
+      .wet-search &, .dry-search & {
+        display: none !important;
+      }
+    }
+    .searchbar-clear-icon {
+      content:url('assets/details/search-dog-close.svg');
+      width: 10px;
+      .wet-search &, .dry-search & {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.searchbar-input {
+  padding-left: 45px !important;
+  .breed-search &, .wet-search &, .dry-search & {
+    padding-left: 24px !important;
+    padding-right: 44px !important;
+  }
+  .wet-search &, .dry-search & {
+    padding-right: 54px !important; // account for "add" button inside input
+  }
+  height: 48px !important;
+}
+
+ion-searchbar {
+  input {
+    -webkit-padding-end: 30px !important;
+  }
+  .add-food-button {
+    position: absolute;
+    z-index: 100;
+    text-align: right;
+    right: 24px;
+    color: $active-blue;
+    top: calc(50% + 1px);
+    transform: translateY(-50%);
+  }
+}
+
+.searchbar-search-icon {
+  padding-left: 10px;
+  height: 48px !important;
+  top: 0 !important;
+  left: 5px !important;
+  .breed-search &, .wet-search &, .dry-search & {
+    display: none !important;
+  }
+}
+
+.ios {
+  //set line height for buttons for ios specifically as line height is rendering differently to android phones
+  button {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    &.primary, &.secondary {
+      line-height: 50px;
+      line-height: 5rem;
+    }
+    &.smart-preset {
+      line-height: 42px;
+      line-height: 4.2rem;
+    }
+  }
+
+  .searchbar-input {
+    padding-top: 2px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .password .native-input {
+    &[type="password"] {
+      padding-top: 10px !important;
+      font-size: 1.6rem !important;
+      letter-spacing: 5px !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    }
+  }
+}
+
+.pets-detail {
+  ion-input {
+    --placeholder-color: #092532;
+    --placeholder-opacity: 1;
+    input {
+      border: none !important;
+      height: auto !important;
+      padding: 0 !important;
+
+      &:focus, &:active {
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      &::placeholder {
+        color: #092532 !important;
+      }
+    }
+  }
+
+}
+
+.weight-switcher {
+  --backdrop-opacity: 0;
+  --width: 66px;
+  margin-left: 30px;
+  margin-top: -20px;
+
+  ion-item {
+  }
+
+  .popover-content {
+    border: 1px solid $grey-5;
+  }
+}
+
+.edit-box {
+  .edit-content {
+    padding: 40px 24px 32px;
+    text-align: center;
+    height: calc(100% - 96px);
+    overflow: scroll;
+    top: 0;
+    margin-bottom: 96px;
+    position: absolute;
+    width: 100%;
+    h5 {
+      margin-bottom: 16px;
+    }
+    &.meal-types {
+      h5 {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+ion-footer, div {
+  &.floating-buttons {
+    width: 100%;
+    height: 88px;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    .hideFloatingButtons & {
+      bottom: -500px; // accounts for height of kb
+    }
+    overflow: hidden;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.07);
+    &.no-fixed {
+      position: relative;
+      box-shadow: none;
+    }
+    .buttons-container {
+      padding: 12px 24px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .one {
+        width: 100%;
+      }
+      .two {
+        width: calc(50% - 4px);
+      }
+      &.disabled {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+ion-radio {
+  --color: #FB949F;
+  --color-checked: #1F2E71;
+}
+
+ion-item {
+  --ripple-color: white;
+}
+
+ion-label {
+  font-family: 'Aeonik-Medium' !important;
+}
+
+.mat-accordion {
+  .mat-expansion-panel {
+    /* important to override pseudo styles */
+    background: transparent !important;
+    box-shadow: none;
+    .mat-expansion-panel-header {
+      padding: 0;
+      /* important to override pseudo styles */
+      background: transparent !important;
+      .mat-expansion-indicator {
+        margin-top: -24px;
+        &::after {
+          border: none !important;
+          content: "";
+          display: inline-block;
+          padding: 0 !important;
+          transform: rotate(180deg) !important;
+          height: 9px;
+          width: 16px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("assets/arrow-accordion.svg");
+        }
+      }
+    }
+    .mat-expansion-panel-content {
+      .mat-expansion-panel-body {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.search-results {
+  width: 100%;
+  ion-list {
+    background: $white-teeth;
+    border: 1px solid $grey-4;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top: none;
+    padding: 10px 16px;
+    color: $night-time-blue;
+    max-height: 173px;
+    overflow: scroll;
+    margin-top: -5px;
+    position: relative;
+    z-index: 3;
+    ion-item {
+      --min-height: 24px;
+      padding: 10px 0;
+      font-family: 'Aeonik-Regular';
+      &::part(native) {
+        line-height: 24px;
+      }
+    }
+  }
+
+  .no-items-found {
+    ion-list {
+      font-family: 'Aeonik-Regular';
+    }
+  }
+}
+
+.back-button {
+  padding-top: 32px;
+  padding-top: calc(constant(safe-area-inset-top) + 32px);
+  padding-top: calc(env(safe-area-inset-top) + 32px);
+}

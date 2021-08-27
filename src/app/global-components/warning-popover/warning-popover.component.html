@@ -1,0 +1,14 @@
+<div class="popover-container">
+  <img src="{{'../../../../../assets/icon/' + icon + '.svg'}}" />
+  <ion-text class="ion-text-center">
+    <p [innerHTML]="text"></p>
+  </ion-text>
+  <div class="buttons-container">
+    <div class="two">
+      <app-cta text="{{ cancelText }}" type="secondary" (click)="close()"></app-cta>
+    </div>
+    <div class="two">
+      <app-cta text="{{ confirmText }}" type="primary" (click)="action()"></app-cta>
+    </div>
+  </div>
+</div>

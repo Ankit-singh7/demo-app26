@@ -1,0 +1,72 @@
+<div class="sign-in-content">
+  <h3>Sign in</h3>
+  <div class="form-container">
+    <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+      <div class="email-form-container">
+        <label>EMAIL ADDRESS</label>
+        <ion-input
+            id="sign-in-email"
+            class="email"
+            [class.error]="(submitted && !foundEmail) || (signInForm.get('email').invalid && signInForm.get('email').touched && !signInForm.get('email').hasError('required'))"
+            [class.success]="(submitted && foundEmail) || (!submitted && signInForm.get('email').valid)"
+            type="email"
+            name="email"
+            formControlName="email"
+            (ionFocus)="onKeyboardStateChange('email')"
+            (ionChange)="updateForm()"
+            (keyup)="closeKeyboard($event)"
+        ></ion-input>
+        <p
+            *ngIf="signInForm.get('email').invalid && signInForm.get('email').touched && !signInForm.get('email').hasError('required')"
+            class="error xsmall"
+        >
+          Invalid email format. Please check and try again.
+        </p>
+        <p
+            *ngIf="submitted && !foundEmail && signInForm.get('email').touched"
+            class="error xsmall"
+        >
+          We can’t find an account registered to that email. Would you like to
+          <a class="xsmall" (click)="showRegister()">create an account</a>
+          instead?
+        </p>
+      </div>
+      <label>PASSWORD</label>
+      <div class="password-form-container">
+        <ion-input
+            id="sign-in-password"
+          #passwordInput
+          class="password"
+          [class.error]="submitted && !invalidPassword && !signInForm.get('password').hasError('required')"
+          [class.success]="(!submitted && signInForm.get('password').valid) || invalidPassword"
+          [class.show-password]="isKeyboardOpen && showPassword"
+          [class.hide-password]="isKeyboardOpen && !showPassword"
+          type="{{passwordType}}"
+          formControlName="password"
+          (ionFocus)="onKeyboardStateChange('password')"
+          (ionChange)="updateForm()"
+          (click)="togglePassword($event)"
+        >
+        </ion-input>
+
+        <span [hidden]="isKeyboardOpen"
+            [class.show]="showPassword"
+            (click)="togglePassword($event);"
+            class="eye"
+        ></span>
+      </div>
+      <p
+          *ngIf="submitted && invalidPassword && !signInForm.get('password').hasError('required')"
+          class="error xsmall"
+      >
+        Incorrect password. Please check for errors and try again.
+      </p>
+      <div class="forgot-password">
+        <a class="small" id="sign-in-forgot-password">Forgot password?</a>
+      </div>
+      <div class="cta-container" [class.disabled]="!signInForm.valid"  id="sign-in-cta">
+        <app-cta [disabled]="!signInForm.valid" text="Sign in" [isSubmit]="true" type="primary"></app-cta>
+      </div>
+    </form>
+  </div>
+</div>

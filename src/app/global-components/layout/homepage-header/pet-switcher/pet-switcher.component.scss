@@ -1,0 +1,53 @@
+@import "../../../../../theme/colours.scss";
+
+.pet-switcher-container {
+  padding: 8px 24px;
+  .item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 56px;
+    border-bottom: 1px solid $grey-5;
+    &:last-child {
+      border-bottom: none;
+    }
+    &.add-dog {
+      p {
+        color: $active-blue;
+        font-weight: 500;
+        font-family: 'Aeonik-Medium';
+      }
+    }
+    &.current {
+      .img-container {
+        width: 30px;
+        height: 30px;
+        background-color: $playtime-green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-left: -3px;
+      }
+      .name {
+        font-family: "Aeonik-Bold";
+      }
+    }
+    p {
+      position: absolute;
+      left: 39px;
+      padding-top: 2px;
+    }
+    .photo {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .name {
+      word-break: break-word;
+    }
+  }
+}

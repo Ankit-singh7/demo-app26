@@ -1,0 +1,70 @@
+
+@import "../../../theme/colours.scss";
+
+
+ion-tabs {
+  contain: none;
+}
+ion-label {
+  font-size: 10px;
+  font-size: 1rem;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: $night-time-blue;
+  margin: 0;
+  padding-top: 2px;
+}
+ion-tab-bar {
+  overflow: visible;
+  height: 58px;
+  contain: size layout;
+  position: relative;
+  --border: 1px solid #E3E3E5;
+}
+
+ion-tab-button {
+  --ripple-color: white;
+  &.capture-button {
+    margin: 0 10px 27px 10px;
+    height: 75px;
+    background-color: transparent;
+    img {
+      max-width: 52px;
+    }
+  }
+
+  &.tab-selected {
+    .tests-icon {
+      background-image: url('../../../assets/tab-navigation/tests-active.svg');
+    }
+    .tracker-icon {
+      background-image: url('../../../assets/tab-navigation/tracker-active.svg');
+    }
+    .insights-icon {
+      background-image: url('../../../assets/tab-navigation/insights-active.svg');
+    }
+    .pets-icon {
+      background-image: url('../../../assets/tab-navigation/pets-active.svg');
+    }
+  }
+}
+
+.icon {
+  width: 22px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.tests-icon {
+  background-image: url('../../../assets/tab-navigation/tests.svg');
+}
+.tracker-icon {
+  width: 24px;
+  background-image: url('../../../assets/tab-navigation/tracker.svg');
+}
+.insights-icon {
+  background-image: url('../../../assets/tab-navigation/insights.svg');
+}
+.pets-icon {
+  background-image: url('../../../assets/tab-navigation/pets.svg');
+}

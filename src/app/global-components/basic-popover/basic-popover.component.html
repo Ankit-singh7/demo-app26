@@ -1,0 +1,21 @@
+  <div [class.noCta]="!ctaText" [class.overflow]="overflow" class="popover-container">
+    <ion-text *ngIf="title" class="ion-text-center">
+      <h4 class="bold">{{ title }}</h4>
+    </ion-text>
+    <div class="icon" *ngIf="icon">
+      <img src="{{'../../../../../assets/icon/' + icon + '.svg'}}" />
+    </div>
+    <ion-text class="ion-text-center">
+      <p>{{ text }}</p>
+    </ion-text>
+    <div *ngIf="imageUrl" class="image-container">
+      <img src="{{ imageUrl }}" />
+    </div>
+    <app-cta *ngIf="!overflow && ctaText" text="{{ ctaText }}" type="primary" (click)="action()"></app-cta>
+    <app-cta *ngIf="!overflow && ctaTextAlt" text="{{ ctaTextAlt }}" type="secondary" (click)="close()"></app-cta>
+  </div>
+  <div *ngIf="overflow" class="floating-button">
+    <div class="buttons-container">
+      <app-cta id="popover-close-cta" text="{{ ctaText }}" type="primary smart-preset" (click)="close()"></app-cta>
+    </div>
+  </div>

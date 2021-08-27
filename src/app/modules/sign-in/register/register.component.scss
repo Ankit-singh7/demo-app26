@@ -1,0 +1,121 @@
+@import "../../../../theme/colours.scss";
+
+.register-content {
+  height: 100%;
+  padding: 0 24px 0 0;
+
+  .back-button {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 48px);
+  }
+
+  h3 {
+    padding: 32px 0 40px 0;
+  }
+
+  a {
+    color: $active-blue;
+    border-color: $active-blue;
+  }
+
+  form {
+    ion-input {
+      border-radius: 4px;
+      --background: #ffffff;
+      border: none;
+      --icon-color: $night-time-blue;
+      --padding-start: 23px;
+      --padding-top: 12px;
+      --padding-end: 46px;
+      --padding-bottom: 12px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      color: $paw-pink;
+      margin-bottom: 8px;
+    }
+
+    p {
+      &.error {
+        margin-top: 8px;
+      }
+    }
+
+    .email-form-container {
+      margin-bottom: 24px;
+    }
+
+    .terms-check-container, .marketing-emails-container {
+      margin: 32px 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 32px;
+
+      p {
+        padding-left: 48px;
+      }
+
+      /* Hide the browser's default checkbox */
+      .terms-check input {
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 32px;
+        width: 32px;
+        border-radius: 4px;
+        border: 1px solid $grey-4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      .terms-check input:checked ~ .checkmark {
+        border-color: $bright-green;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .terms-check input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .terms-check .checkmark:after {
+        content: url("../../../../assets/create-account/tick-terms.svg");
+        margin-top: 3px;
+      }
+    }
+    .marketing-emails-container {
+      align-items: unset;
+      p {
+        padding-top: 2px;
+      }
+    }
+    .cta-container {
+      &.disabled {
+        pointer-events: none;
+      }
+    }
+  }
+
+}

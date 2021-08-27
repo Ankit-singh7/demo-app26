@@ -1,0 +1,93 @@
+@import "../../../../../theme/colours.scss";
+@import "../../../../../theme/breakpoints.scss";
+
+ion-content {
+  ion-slides {
+    --bullet-background: #FFFFFF;
+    --bullet-background-active: #1F2E71;
+  }
+
+  --overflow: hidden;
+
+  section {
+    transition: background-color 0.5s;
+
+    .back-button {
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      left: 24px;
+    }
+
+    &.pink {
+      background-color: $blep-pink;
+    }
+
+    &.green {
+      background-color: $bright-green;
+    }
+
+    &.yellow {
+      background-color: $treat-yellow;
+    }
+
+    .orientation-slides {
+      height: calc(100vh - 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    height: 100%;
+    position: relative;
+
+    ion-slides {
+      ion-slide {
+        display: block;
+      }
+    }
+
+    .swiper-pagination-bullets {
+      bottom: 10px !important;
+    }
+
+    .next-btn {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      padding: 0 32px 56px;
+      bottom: 0;
+      @include small-mobile {
+        padding-bottom: 28px;
+      }
+    }
+
+    .orientation-img {
+      width: calc(100% - 108px);
+      margin: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .orientation-copy {
+      max-width: 296px;
+      margin: 0 auto;
+
+      h3 {
+        color: $first-place-blue;
+        margin: 22px auto 0;
+        max-width: 250px;
+      }
+
+      p {
+        color: $first-place-blue;
+        padding: 16px 0 21px;
+        margin: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

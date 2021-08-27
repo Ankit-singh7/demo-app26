@@ -1,0 +1,60 @@
+<ion-content>
+  <section [ngClass]="activeClass">
+    <div class="back-button">
+      <app-back-cta (click)="goBack()"></app-back-cta>
+    </div>
+    <div class="orientation-slides">
+      <ion-slides #slider pager="true" (ionSlideDidChange)="slideChanged()">
+        <ion-slide>
+          <div class="orientation-img">
+            <img class="slide-img" src="../../../../../assets/orientation/orientation-1.png" alt="">
+          </div>
+          <div class="orientation-copy">
+            <ion-text class="ion-text-center" color="dark">
+              <h3>Healthy gut, healthy body</h3>
+            </ion-text>
+            <ion-text color="dark" class="ion-text-center">
+              <p>
+                A healthy gut is important to your dog’s overall health. But they can’t tell you what they need. What is going on in there?
+              </p>
+            </ion-text>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="orientation-img">
+            <img class="slide-img" src="../../../../../assets/orientation/orientation-2.png" alt="">
+          </div>
+          <div class="orientation-copy">
+            <ion-text class="ion-text-center" color="dark">
+              <h3>Remove the guesswork</h3>
+            </ion-text>
+            <ion-text color="dark" class="ion-text-center">
+              <p>
+                You know your dog better than anyone, but we can support. We’re here so you can forget trial and error.
+              </p>
+            </ion-text>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="orientation-img">
+            <img class="slide-img" src="../../../../../assets/orientation/orientation-3.png" alt="">
+          </div>
+          <div class="orientation-copy">
+            <ion-text class="ion-text-center" color="dark">
+              <h3>As unique as your dog</h3>
+            </ion-text>
+            <ion-text color="dark" class="ion-text-center">
+              <p>
+                Your dog’s poops and microbiome (gut make-up) are unique to them. Learn about your dog’s specific needs.
+              </p>
+            </ion-text>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="next-btn">
+      <app-cta type="primary blue color-{{activeClass}}" text="Next" (click)="next()"></app-cta>
+    </div>
+  </section>
+</ion-content>
+

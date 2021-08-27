@@ -1,0 +1,88 @@
+<ion-content #testsContent [fullscreen]="true">
+  <app-homepage-header page="Tests" type="primary"> </app-homepage-header>
+  <section class="one">
+    <p class="bold">Coming soon</p>
+    <div class="line small"></div>
+    <div class="product-container">
+      <h4 class="bold">Gut Intelligence Kit</h4>
+      <img class="product-image" src="../../../../assets/tests/product-image.svg" />
+      <div class="product-details-container">
+        <p>Full microbiome profile</p>
+      </div>
+      <div [ngClass]="{'disabled': registered}">
+        <app-cta type="primary" text="{{registerCtaText}}" [showIcon]="registered" [registered]="registered" (click)="registerInterest()"></app-cta>
+      </div>
+      <div class="line large"></div>
+    </div>
+    <div class="copy-container">
+      <h4 class="bold">This is the beginning of something amazing</h4>
+      <p>
+        We can tell an awful lot about your dog’s digestive health from their
+        poop (yes, really).
+        <br />
+        <br />
+        This cleverly-designed, simple testing kit enables you to hygienically
+        take a sample of your dog’s poop, and send it to our team of scientists
+        for a detailed microbiome analysis.
+      </p>
+    </div>
+  </section>
+  <section class="two">
+    <div class="flex-container">
+      <img class="tick" src="../../../../assets/icon/tick.svg" />
+      <p>Detailed, personalised report</p>
+    </div>
+    <div class="flex-container">
+      <img class="tick" src="../../../../assets/icon/tick.svg" />
+      <p>
+        Received in-app - always know to find it, and view wellbeing over time
+      </p>
+    </div>
+    <div class="flex-container">
+      <img class="tick" src="../../../../assets/icon/tick.svg" />
+      <p>Free postage and packaging</p>
+    </div>
+    <div class="flex-container">
+      <img class="tick" src="../../../../assets/icon/tick.svg" />
+      <p>Contains everything you need</p>
+    </div>
+  </section>
+  <section class="three">
+    <h4 class="bold">Know your pet’s microbiome as well as you know them</h4>
+    <p>
+      The gut microbiome has been shown to influence digestion, the immune
+      system, energy levels, and even your dog’s mood. Testing the gut
+      microbiome helps you understand what’s going on inside your dog and to
+      take positive steps towards improving your pet’s wellbeing.
+    </p>
+    <div class="line large"></div>
+    <h4 class="bold">What will the test cover?</h4>
+    <p>
+      •	An assessment of the overall health of your dog’s gut microbiome, relative to other dogs in our extensive database
+      <br/>
+      <br/>
+      •	Profiles of the good and bad bacteria present
+      <br/>
+      <br/>
+      •	An evaluation of the types of bacteria in your dog’s gut and how they relate to:
+      <br/>
+      <br/>
+      - Lifestyle
+      <br/>
+      <br/>
+      -	Energy balance
+      <br/>
+      <br/>
+      -	Immunity
+      <br/>
+      <br/>
+      -	And more
+      <br/>
+      <br/>
+      •	Loads of information about what the bacteria in your dog’s gut do
+      <br/>
+      <br/>
+      •	Personalised recommendations of how to help improve your dog’s microbiome
+      </p>
+  </section>
+</ion-content>

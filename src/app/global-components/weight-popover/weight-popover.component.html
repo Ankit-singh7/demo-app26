@@ -1,0 +1,6 @@
+<ion-content class="weight-popover">
+  <ion-list >
+    <ion-item detail="false" button lines="none" [ngClass]="{'active': pet.weightType === 'kg'}" (click)="changeWeight('kg')">kg</ion-item>
+    <ion-item detail="false" button lines="none" [ngClass]="{'active': pet.weightType === 'lb'}" (click)="changeWeight('lb')">lb</ion-item>
+  </ion-list>
+</ion-content>

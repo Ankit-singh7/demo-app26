@@ -1,0 +1,52 @@
+@import "../../../theme/colours.scss";
+
+section {
+  &.first-time {
+    padding: 0;
+    margin-top: 32px;
+    .first-time-container {
+      padding: 40px 32px;
+      border-top-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      background-color: white;
+      height: 224px;
+
+      .email-container {
+        p {
+          margin-bottom: 40px;
+          color: $grey-2;
+        }
+      }
+      .password-container {
+        a {
+          color: $active-blue;
+          border-bottom: 1px solid $active-blue;
+        }
+      }
+    }
+  }
+  &.delete-intents {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+      color: $bad-dog-red;
+      border-bottom: 1px solid $bad-dog-red;
+      display: block;
+      margin-bottom: 27px;
+    }
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  &.email {
+    color: $grey-2;
+  }
+
+  &.password {
+    color: $paw-pink;
+  }
+}

@@ -1,0 +1,23 @@
+<ion-content>
+  <section>
+    <div class="welcome-container">
+
+      <div class="welcome-top">
+        <img src="/assets/welcome-logo.svg"/>
+      </div>
+      <div class="welcome-middle">
+        <img class="welcome-img" src="../../../../../assets/welcome/welcome.png" />
+      </div>
+      <div class="welcome-bottom">
+        <div class="buttons">
+          <app-cta *ngIf="!isSignedIn" id="get-started-cta" type="primary" text="Get started" (click)="navigate('intro/legal')"></app-cta>
+          <app-cta id="sign-in-cta" type="secondary pink" text="Sign in" (click)="showSignIn()"></app-cta>
+        </div>
+        <div class="create-account">
+          <a  id="register-cta" (click)="showSignIn(true)">Create an account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+

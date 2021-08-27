@@ -1,0 +1,90 @@
+<ion-content fullscreen="true">
+  <section [class.allowScroll]="!allowScroll" class="content-to-shift" [ngClass]="activeQuestions[activeIndex]?.question">
+    <div class="back-button" >
+      <app-back-cta (click)="goBack()"></app-back-cta>
+      <app-skip-cta (click)="nextQuestion()"></app-skip-cta>
+    </div> 
+    <div class="cards-container">
+      <div class="details-card">
+        <div class="card-content">
+          <ion-text class="ion-text-center">
+            <p>{{ currentQuestion }} of {{totalQuestions}}</p>
+          </ion-text>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'desexed'">
+            <app-edit-de-sexing type="onboarding" (submitData)="submitData($event)"></app-edit-de-sexing>
+          </div>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'weight'">
+            <ion-text class="ion-text-center">
+              <h4>What does {{petName}} weigh?</h4>
+            </ion-text>
+            <div class="input-container" >
+                <ion-input [class.error]="weight === 0" type="number" inputmode="decimal" class="weight" [(ngModel)]="weight" autocapitalize="on"
+                          (ionChange)="hasEnteredWeight($event)" (ionFocus)="onKeyboardStateChange(true)"
+                ></ion-input>
+                <ion-select [ngClass]="{'select-ios12': useiOS12Styling}" [class.error]="weight === 0" [class.disabled]="isKeyboardOpen === true" class="select" [(ngModel)]="weightSelect" [interfaceOptions]="customPopoverOptions" interface="popover" (ionChange)="weightSelected($event)">
+                  <ion-select-option value="kg">kg</ion-select-option>
+                  <ion-select-option value="lb">lb</ion-select-option>
+                </ion-select> 
+            </div>
+            <p *ngIf="weight === 0" class="xsmall error">Please enter a number greater than 0</p>
+            <p *ngIf="invalidWeight" class="xsmall error">Please enter a valid weight</p>
+
+          </div>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'mealTypePerMeal'">
+            <app-edit-meal-types type="onboarding" (submitOnboardingData)="showMealLookupScreens($event)"></app-edit-meal-types>
+          </div>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'dryFoods'">
+            <app-edit-dry-food type="onboarding" (hasDryFoods)="checkDryFoods($event)" (keyboardAnim)="resizeScreen($event)"></app-edit-dry-food>
+          </div>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'wetFoods'">
+            <app-edit-wet-food type="onboarding" (hasWetFoods)="checkWetFoods($event)" (keyboardAnim)="resizeScreen($event)"></app-edit-wet-food>
+          </div>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'allergies'">
+            <app-edit-allergies type="onboarding" (hasAllergies)="checkAllergies($event)" (keyboardAnim)="resizeScreen($event)"></app-edit-allergies>
+          </div>
+          <div class="question-container" [hidden]="activeQuestions[activeIndex]?.question !== 'conditions'">
+            <app-edit-conditions type="onboarding" (hasConditions)="checkConditions($event)" (keyboardAnim)="resizeScreen($event)"></app-edit-conditions>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+
+<ion-footer>
+  <div [hidden]="activeQuestions[activeIndex]?.question !== 'weight'" class="floating-buttons">
+    <div class="buttons-container" [class.disabled]="!weightEntered || noWeight || invalidWeight">
+      <div class="one">
+        <app-cta type="primary" text="Next" [disabled]="!weightEntered || noWeight || invalidWeight" (click)="submitWeight(weight, weightSelect)"></app-cta>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="activeQuestions[activeIndex]?.question !== 'dryFoods'" class="floating-buttons">
+    <div class="buttons-container" [class.disabled]="!hasDryFoods">
+      <div class="one">
+        <app-cta type="primary" text="Next" [disabled]="!hasDryFoods" (click)="submitData(currentDryFoods)"></app-cta>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="activeQuestions[activeIndex]?.question !== 'wetFoods'" class="floating-buttons">
+    <div class="buttons-container" [class.disabled]="!hasWetFoods">
+      <div class="one">
+        <app-cta type="primary" text="Next" [disabled]="!hasWetFoods" (click)="submitData(currentWetFoods)"></app-cta>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="activeQuestions[activeIndex]?.question !== 'allergies'" class="floating-buttons">
+    <div class="buttons-container" [class.disabled]="!hasAllergies">
+      <div class="one">
+        <app-cta type="primary" text="Next" [disabled]="!hasAllergies" (click)="submitData(currentAllergies)"></app-cta>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="activeQuestions[activeIndex]?.question !== 'conditions'" class="floating-buttons">
+    <div class="buttons-container" [class.disabled]="!hasConditions">
+      <div class="one">
+        <app-cta type="primary" text="Next" [disabled]="!hasConditions" (click)="submitData(currentConditions)"></app-cta>
+      </div>
+    </div>
+  </div>
+</ion-footer>

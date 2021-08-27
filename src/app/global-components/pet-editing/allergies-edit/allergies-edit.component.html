@@ -1,0 +1,48 @@
+<ion-text class="ion-text-center">
+  <h4 *ngIf="type === 'onboarding'">Does {{pet?.name}} have any allergies?</h4>
+  <h5 *ngIf="type !== 'onboarding'">Known allergies</h5>
+</ion-text>
+<div class="radio-buttons" *ngIf="type === 'onboarding'">
+  <ion-radio-group value="radioSelected" mode="md" [(ngModel)]="radioSelected" (ionChange)="toggleRadio($event)">
+    <ion-item>
+      <p>No, not that I know of</p>
+      <ion-radio slot="start"  value="no"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <p>Yes, and they are:</p>
+      <ion-radio slot="start"  value="yes"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</div>
+<div class="input-container" *ngIf="radioSelected === 'yes'">
+  <ion-item>
+    <ion-searchbar placeholder="Start typing an allergy" debounce="500" [(ngModel)]="searchBar"
+                   (ionChange)="filterList($event)"
+                   showCancelButton="never" (ionFocus)="onKeyboardStateChange(true)" (keyup)="closeKeyboard($event)"
+    ></ion-searchbar>
+  </ion-item>
+  <ion-item *ngIf="isItemAvailable" class="search-results-container">
+    <div class="search-results">
+      <div *ngIf="allergiesList && allergiesList.length > 0; else noItems">
+        <ion-list >
+          <ion-item *ngFor="let item of allergiesList" button detail="false" (click)="allergyClicked(item)">{{ item }}</ion-item>
+        </ion-list>
+      </div>
+      <ng-template #noItems>
+        <div class="no-items-found">
+          <ion-list>
+            No items found.
+          </ion-list>
+        </div>
+      </ng-template>
+    </div>
+  </ion-item>
+  <ion-item class="list">
+    <div class="allergies">
+      <div class="allergy" *ngFor="let allergy of petAllergies">
+        <p>{{allergy}}</p>
+        <div class="delete-icon" (click)="removeItem(allergy)"><img src="../../../../assets/pet-details/close.svg" /></div>
+      </div>
+    </div>
+  </ion-item>
+</div>

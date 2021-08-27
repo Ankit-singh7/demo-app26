@@ -1,0 +1,11 @@
+<div class="{{ type }}">
+  <ion-text class="ion-text-center">
+      <h4 *ngIf="type === 'onboarding'">Has {{pet.name}} been {{pet.gender === 'male' ? 'neutered' : 'spayed'}}?</h4>
+      <h5 *ngIf="type !== 'onboarding'">Has {{pet.name}} been {{pet.gender === 'male' ? 'neutered' : 'spayed'}}?</h5>
+  </ion-text>
+  <div class="buttons">
+    <app-cta type="primary smart-preset" text="Yes" (click)="submit(pet.gender === 'male' ? 'neutered' : 'spayed', true)"></app-cta>
+    <app-cta type="primary smart-preset" text="No" (click)="submit(pet.gender === 'male' ? 'neutered' : 'spayed', false)"></app-cta>
+    <app-cta type="primary smart-preset" text="I don’t know" (click)="submit('desexedUndecided', true)"></app-cta>
+  </div>
+</div>

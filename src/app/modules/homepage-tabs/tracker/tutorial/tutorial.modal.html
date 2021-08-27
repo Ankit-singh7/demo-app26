@@ -1,0 +1,72 @@
+<ion-content #tutorialContent>
+  <div class="header">
+    <div class="close" (click)="close(true)"><img src="../../../../../assets/pet-details/close.svg" /></div>
+    <h3 class="bold">How does this work?</h3>
+    <p>
+      Scanning a poop? A little odd at first, but our custom technology really
+      works.
+    </p>
+    <div class="link" (click)="scroll()">
+      <p class="medium">Skip to the technical stuff</p>
+    </div>
+  </div>
+  <section class="how-to-use">
+    <h4 class="bold">How to use the tracker</h4>
+    <div class="step-container">
+      <img
+        class="step"
+        src="../../../../../assets/how-does-this-work/step1.png"
+      />
+      <p>Wait for a new “sample”... 💩</p>
+    </div>
+    <div class="step-container">
+      <img
+        class="step"
+        src="../../../../../assets/how-does-this-work/step2.png"
+      />
+      <p>Tap the capture button</p>
+    </div>
+    <div class="step-container">
+      <img
+        class="step"
+        src="../../../../../assets/how-does-this-work/step3.png"
+      />
+      <p>Take a clear picture. If you’re quick, no-one will see!</p>
+    </div>
+    <div class="step-container">
+      <img
+        class="step"
+        src="../../../../../assets/how-does-this-work/step4.png"
+      />
+      <p>Monitor things as long or as often as you feel is necessary.</p>
+    </div>
+  </section>
+  <section #anchor id="technology-we-use" class="technology-we-use">
+    <h4>The technology we use</h4>
+    <p>
+      Using our custom technology and utilising machine learning, we can assess
+      the quality of a poop based on many, many previous samples.
+      <br /><br />
+      Effectively, the computer “learns” features and details such as whether
+      something looks wet or dry.
+      <br /><br />
+      When you take a picture, the app is using that previous data combined with
+      algorithms to determine unique characteristics about your dogs poop.
+    </p>
+    <div class="disclaimer-container">
+      <p>
+        This app is designed to help you monitor the wellbeing of your pet. It
+        is not a diagnostic tool and does not replace regular consultations with
+        your vet.
+      </p>
+    </div>
+  </section>
+  <div class="floating-buttons no-fixed">
+    <div class="buttons-container">
+      <div class="one">
+        <app-cta id="how-does-this-work-close-cta" type="primary" text="Close" (click)="close()"></app-cta>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

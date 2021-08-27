@@ -1,0 +1,5 @@
+@mixin small-mobile {
+  @media all and (max-height: 640px) {
+    @content;
+  }
+}

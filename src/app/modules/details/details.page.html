@@ -1,0 +1,152 @@
+<ion-content fullscreen="true">
+  <section class="content-to-shift">
+    <div class="back-button" >
+      <app-back-cta (click)="goBack()" *ngIf="(!multiPetMode) || (multiPetMode && currentQuestion > 1)"></app-back-cta>
+      <div *ngIf="multiPetMode" class="quit" (click)="quitAddNewDog()">
+        <span class="medium small">Quit</span>
+        <img src="../../../assets/details/close.svg">
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="cards-container">
+      <div class="details-card">
+        <div class="details-card-bg1 card"></div>
+        <div class="details-card-bg2 card"></div>
+        <div class="card-bg"></div>
+        <div class="details-img">
+          <img class="slide-img" src="../../../../../assets/details/waving cat.png" alt="">
+        </div>
+        <div class="card-content">
+          <ion-text class="ion-text-center">
+            <p>{{ currentQuestion }} of {{totalQuestions}}</p>
+          </ion-text>
+          <div class="question-container" [hidden]="currentQuestion !== 1">
+            <ion-text class="ion-text-center">
+              <h4>What’s your pet’s name?</h4>
+            </ion-text>
+            <div class="input-container">
+              <ion-item>
+                <ion-input [class.error]="hasBadWord || hasDuplicateName || nameTooLong" [(ngModel)]="petName" autocapitalize="on" (keyup)="closeKeyboard($event)"
+                          (ionFocus)="onKeyboardStateChange(true)" (ionChange)="hasEnteredName($event)"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <p *ngIf="hasBadWord" class="xsmall error">{{ hasBadWordErrorText }}</p>
+            <p *ngIf="hasDuplicateName" class="xsmall error">{{ hasDuplicateNameErrorText }}</p>
+            <p *ngIf="nameTooLong" class="xsmall error">{{ nameTooLongErrorText }}</p>
+
+            <div class="next-btn" [class.disabled]="!nameEntered || hasBadWord || hasDuplicateName || nameTooLong">
+              <!-- don't change 'petName' in this submit, it's ref'd elsewhere -->
+              <app-cta type="primary" text="Next" [disabled]="!nameEntered || hasBadWord || hasDuplicateName || nameTooLong" (click)="submitData('name', petName)"></app-cta>
+            </div>
+          </div>
+
+          <div class="question-container" [hidden]="currentQuestion !== 2">
+            <ion-text class="ion-text-center">
+              <h4>And what kind of dog is {{petName}}?</h4>
+            </ion-text>
+            <div class="input-container">
+              <ion-item>
+                <ion-searchbar [value]="petBreed" placeholder="Start typing a breed" debounce="500" class="breed-search"
+                               #breedSearch (ionChange)="filterList($event)"  (ionClear)="hasEnteredBreed($event)"
+                               showCancelButton="never" (ionFocus)="onKeyboardStateChange(true)" (ionBlur)="closeSearch($event)" (keyup)="closeKeyboard($event)"
+                ></ion-searchbar>
+              </ion-item>
+              <ion-item *ngIf="isItemAvailable">
+                <div class="search-results">
+                  <div *ngIf="petBreeds && petBreeds.length > 0">
+                    <ion-list >
+                      <ion-item *ngFor="let item of petBreeds" button detail="false" (click)="breedClicked(item)">{{ item }}</ion-item>
+                    </ion-list>
+                  </div>
+                </div>
+              </ion-item>
+            </div>
+            <div class="next-btn" [class.disabled]="!breedEntered">
+              <app-cta type="primary" text="Next" [disabled]="!breedEntered"  (click)="submitData('breed', petBreed)"></app-cta>
+            </div>
+          </div>
+          <div class="question-container" [hidden]="currentQuestion !== 3">
+            <ion-text class="ion-text-center">
+              <h4>What's {{petName}}’s sex?</h4>
+            </ion-text>
+            <ion-list>
+              <div class="age-buttons">
+                <app-cta type="smart-preset" text="Female" (click)="submitData('gender', 'female')"></app-cta>
+                <app-cta type="smart-preset" text="Male" (click)="submitData('gender', 'male')"></app-cta>
+              </div>
+            </ion-list>
+          </div>
+          <div class="question-container" [hidden]="currentQuestion !== 4">
+            <ion-text class="ion-text-center">
+              <h4>How old is {{petName}}?</h4>
+            </ion-text>
+            <ion-list>
+              <div class="age-buttons">
+                <app-cta type="smart-preset" text="6 months or younger" (click)="submitData('age', '0-0.5')"></app-cta>
+                <app-cta type="smart-preset" text="6 to 12 months" (click)="submitData('age', '0.5-1')"></app-cta>
+                <app-cta type="smart-preset" text="1 to 2 years" (click)="submitData('age', '1-2')"></app-cta>
+                <app-cta type="smart-preset" text="3 to 5 years" (click)="submitData('age', '3-5')"></app-cta>
+                <app-cta type="smart-preset" text="6 to 9 years" (click)="submitData('age', '6-9')"></app-cta>
+                <app-cta type="smart-preset" text="10+ years" (click)="submitData('age', '10+')"></app-cta>
+              </div>
+            </ion-list>
+          </div>
+          <div class="question-container" [hidden]="currentQuestion !== 5">
+            <ion-text class="ion-text-center">
+              <h4>How many main meals does {{petName}} eat per day?</h4>
+            </ion-text>
+            <ion-list>
+              <div class="frequency-buttons">
+                <app-cta type="smart-preset" text="One" (click)="submitData('mealFrequency', '1')"></app-cta>
+                <app-cta type="smart-preset" text="Two" (click)="submitData('mealFrequency', '2')"></app-cta>
+                <app-cta type="smart-preset" text="Three" (click)="submitData('mealFrequency', '3')"></app-cta>
+                <app-cta type="smart-preset" text="Four" (click)="submitData('mealFrequency', '4')"></app-cta>
+              </div>
+              </ion-list>
+          </div>
+          <div class="question-container" [hidden]="currentQuestion !== 6">
+            <ion-text class="ion-text-center">
+              <h4>How many treats does {{petName}} eat per day?</h4>
+            </ion-text>
+            <ion-list>
+              <div class="age-buttons">
+                <app-cta type="smart-preset" text="1-4 per day" (click)="submitData('treats', '1-4')"></app-cta>
+                <app-cta type="smart-preset" text="4-8 per day" (click)="submitData('treats', '4-8')"></app-cta>
+                <app-cta type="smart-preset" text="8+ per day" (click)="submitData('treats', '8+')"></app-cta>
+                <app-cta type="smart-preset" text="None" (click)="submitData('treats', '0')"></app-cta>
+              </div>
+            </ion-list>
+          </div>
+          <div class="question-container" [hidden]="currentQuestion !== 7">
+            <ion-text class="ion-text-center">
+              <h4>Does {{petName}} ever eat human foods?</h4>
+            </ion-text>
+            <ion-list>
+              <div class="age-buttons">
+                <app-cta type="smart-preset" text="Every so often" (click)="submitData('humanTreats', 'every so often')"></app-cta>
+                <app-cta type="smart-preset" text="Fairly often" (click)="submitData('humanTreats', 'fairly often')"></app-cta>
+                <app-cta type="smart-preset" text="Very often" (click)="submitData('humanTreats', 'very often')"></app-cta>
+                <app-cta type="smart-preset" text="Never" (click)="submitData('humanTreats', 'never')"></app-cta>
+              </div>
+            </ion-list>
+          </div>
+          <div class="question-container" [hidden]="currentQuestion !== 8">
+            <ion-text class="ion-text-center">
+              <h4>What are you hoping to do for {{petName}} through Miome?</h4>
+            </ion-text>
+            <ion-list>
+              <div class="age-buttons">
+                <app-cta type="smart-preset" text="Manage a current problem" (click)="submitData('goals', 'manage a current problem')"></app-cta>
+                <app-cta type="smart-preset" text="Prevent a problem reoccuring" (click)="submitData('goals', 'prevent a problem reoccuring')"></app-cta>
+                <app-cta type="smart-preset" text="Help maintain wellbeing" (click)="submitData('goals', 'help maintain wellbeing')"></app-cta>
+              </div>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</ion-content>

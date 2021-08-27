@@ -1,0 +1,55 @@
+<div class="register-content">
+  <h3>Create an account</h3>
+  <div class="form-container">
+    <form [formGroup]="account" (ngSubmit)="createAccount()">
+      <div class="email-form-container">
+        <label>EMAIL ADDRESS</label>
+        <ion-input
+            id="register-email"
+            class="email"
+            [class.error]="!account.get('email').hasError('required') && accountExists || (account.get('email').invalid && account.get('email').touched && !account.get('email').hasError('required'))"
+            [class.success]="account.get('email').valid && !accountExists"
+            type="email"
+            name="email"
+            formControlName="email"
+            (ionFocus)="onKeyboardStateChange(true)"
+            (ionChange)="updateForm()"
+        ></ion-input>
+        <p
+            *ngIf="account.get('email').invalid && account.get('email').touched && !account.get('email').hasError('required')"
+            class="error xsmall"
+        >
+          Invalid email format. Please check and try again.
+        </p>
+        <p *ngIf="submitted && accountExists" class="error xsmall">
+          An account already exists for this email address. Would you like to
+          <a class="xsmall" (click)="showSignIn()">sign in</a> instead?
+        </p>
+      </div>
+      <label>CREATE PASSWORD</label>
+      <app-password-checker [form]="account"></app-password-checker>
+      <div class="terms-check-container">
+        <label class="terms-check">
+          <input type="checkbox" formControlName="terms"/>
+          <span class="checkmark"></span>
+        </label>
+        <p>I agree to the <a class="large" (click)="openStaticModal('terms-conditions')" id="terms-agree-cta">terms and conditions</a></p>
+      </div>
+      <div class="marketing-emails-container">
+        <label class="terms-check">
+          <input type="checkbox" formControlName="marketing" />
+          <span class="checkmark"></span>
+        </label>
+        <p>I’m happy to receive <a class="large" (click)="openStaticModal('marketing')" id="marketing-cta">marketing emails</a> from Miome (optional) </p>
+      </div>
+      <div class="cta-container" [class.disabled]="!account.valid"  id="register-cta">
+        <app-cta
+            [disabled]="!account.valid"
+            text="Create account"
+            [isSubmit]="true"
+            type="primary"
+        ></app-cta>
+      </div>
+    </form>
+  </div>
+</div>

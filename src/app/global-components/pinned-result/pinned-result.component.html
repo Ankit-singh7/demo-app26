@@ -1,0 +1,13 @@
+<ng-container *ngFor="let todo of todos">
+  <div class="pin-container" [ngClass]="{hidden: todo.hidden}">
+    <div class="category-container">
+      <img src="{{'../../../../assets/icon/suggestion-categories/' + todo.categoryIcon + '.svg'}}" />
+      <p class="category-title bold" [ngClass]="todo.categoryTitle">{{ todo.categoryTitle }}</p>
+    </div>
+    <div class="content-container">
+      <p class="title bold">{{ todo.title }}</p>
+      <p class="copy">{{ todo.copy }}</p>
+    </div>
+    <app-cta text="Dismiss" type="secondary smart-preset" (click)="dismissTodo(todo.id)"></app-cta>
+  </div>
+</ng-container>

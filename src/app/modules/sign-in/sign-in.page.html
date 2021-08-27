@@ -1,0 +1,27 @@
+<ion-content fullscreen="true">
+  <section class="content-to-shift">
+    <div class="back-button">
+      <app-back-cta (click)="dismissModal()"></app-back-cta>
+    </div>
+
+    <div class="sign-in-container">
+      <app-sign-in *ngIf="this.signUp" (toggleSignup)="toggleSignUp()" (navigate)="navigate($event)"></app-sign-in>
+    </div>
+    <div class="register-container">
+      <app-register *ngIf="!this.signUp" [navigateMenu]="navigateMenu" (toggleSignup)="toggleSignUp()" (navigate)="navigate($event)"></app-register>
+    </div>
+
+
+
+  </section>
+  <div [hidden]="isKeyboardOpen">
+    <p class="sign-in-toggle-copy small" *ngIf="signUp; else register">
+      Don't have an account? <a (click)="toggleSignUp()" id="sign-in-create-account">Create one</a>
+    </p>
+    <ng-template #register>
+      <p  class="sign-in-toggle-copy small">
+        Already have an account? <a (click)="toggleSignUp()" id="register-show-sign-in">Sign in</a>
+      </p>
+    </ng-template>
+  </div>
+</ion-content>

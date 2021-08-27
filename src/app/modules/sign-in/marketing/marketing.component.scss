@@ -1,0 +1,27 @@
+@import '../../../../theme/colours.scss';
+
+
+ion-content {
+  .back-button {
+    left: 24px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 48px);
+  }
+  section {
+    margin-top: 32px;
+    padding: 40px 32px 0;
+    border-top-left-radius: 40px;
+    background-color: white;
+    height: 100vh;
+    h5 {
+      padding-bottom: 24px;
+      border-bottom: 1px solid $grey-5;
+    }
+    p {
+      padding-top: 24px;
+    }
+  }
+}

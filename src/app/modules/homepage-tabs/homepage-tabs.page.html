@@ -1,0 +1,26 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tests">
+      <div class="tests-icon icon"></div>
+      <ion-label>Tests</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="tracker">
+      <div class="tracker-icon icon"></div>
+      <ion-label>Tracker</ion-label>
+    </ion-tab-button>
+    <ion-tab-button class="capture-button" (click)="goToCamera()">
+      <img class="capture-icon" src="../../../assets/tab-navigation/capture.svg" />
+      <ion-label>Capture</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="insights">
+      <div class="insights-icon icon"></div>
+      <ion-label>Summary</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="pets">
+      <div class="pets-icon icon"></div>
+      <ion-label>Pets</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

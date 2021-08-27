@@ -1,0 +1,26 @@
+@import "../../../theme/colours.scss";
+@import "../../../theme/breakpoints.scss";
+
+ion-content {
+  --overflow: hidden;
+  --background: white;
+
+    .sign-in-toggle-copy {
+      text-align: center;
+      position: fixed;
+      bottom: 56px;
+      @include small-mobile {
+        bottom: 24px;
+      }
+      width: 100%;
+      color: #656566;
+      font-family: 'Aeonik-Medium';
+      a {
+        color: $active-blue;
+        border-color: $active-blue;
+      }
+    }
+  section {
+    padding-left: 24px;
+  }
+}

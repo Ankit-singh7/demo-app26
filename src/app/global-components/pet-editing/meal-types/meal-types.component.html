@@ -1,0 +1,23 @@
+<div class="{{ type }}">
+  <ion-text class="ion-text-center">
+    <h4 *ngIf="type === 'onboarding'">What’s the food like for {{pet?.name}}’s meals?</h4>
+    <h5 *ngIf="type !== 'onboarding'">What’s the food like for {{pet?.name}}’s meals?</h5>
+  </ion-text>
+  <div class="meals-container" *ngFor="let meal of totalMealsArray; let i = index">
+    <ion-text class="ion-text-center">
+      <label>Meal {{i + 1}}</label>
+    </ion-text>
+    <div class="buttons-container">
+      <div class="btn-container">
+        <app-cta [disabled]="stopPresses" [highlight]="meal.type === 'dry'" type="smart-preset" text="Dry" (click)="submitMeal('dry', i)"></app-cta>
+      </div>
+      <div class="btn-container">
+        <app-cta [disabled]="stopPresses" [highlight]="meal.type === 'wet'" type="smart-preset" text="Wet" (click)="submitMeal('wet', i)"></app-cta>
+      </div>
+      <div class="btn-container">
+        <app-cta [disabled]="stopPresses" [highlight]="meal.type === 'mixed'" type="smart-preset" text="Mixed" (click)="submitMeal('mixed', i)"></app-cta>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,127 @@
+@import "../../../theme/colours.scss";
+
+button {
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .text {
+    &.icon {
+      &:after {
+        content: "";
+        background-image: url('../../../assets/icon/pin.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 16px;
+        vertical-align: sub;
+        margin-left: 12px;
+        display:inline-block;
+        margin-bottom: 1px;
+      }
+    }
+  }
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.primary, &.secondary, &.smart-preset, &.quaternary {
+    width: 100%;
+    margin: 8px auto;
+  }
+
+  &.primary, &.secondary, &.quaternary {
+    border-radius: 40px;
+  }
+  &.primary, &.secondary {
+    height: 48px;
+    line-height: 48px;
+    line-height: 4.8rem;
+    &.registered {
+      background-color: $grey-5;
+      border-color: $grey-5;
+      color: $grey-2;
+      .text {
+        &.icon {
+          &:after {
+          background-image : url('../../../assets/icon/tick-registered.svg');
+          height: 14px;
+          }
+        }
+      }
+    }
+  }
+  &.quaternary, &.smart-preset {
+    height: 40px;
+    line-height: 40px;
+    line-height: 4rem;
+  }
+  &.smart-preset {
+    border-radius: 20px;
+    &.highlight {
+      background-color: $first-place-blue;
+      color: white;
+    }
+  }
+
+  &.primary, &.smart-preset {
+    background-color: $blep-pink;
+    color: $first-place-blue;
+    outline: 0;
+    border: 0;
+
+    &.blue {
+      background: $first-place-blue;
+      color: $white-teeth;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border: 1px solid $grey-4;
+    color: $first-place-blue;
+    outline: 0;
+    
+    &.pink {
+      color: $blep-pink;
+      border-color: $blep-pink;
+    }
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: $active-blue;
+    border-bottom: 2px solid $active-blue;
+    padding: 0 0 3px;
+  }
+
+  &.quaternary {
+    background-color: transparent;
+    color: $active-blue;
+    border: 1px solid $grey-4;
+    outline: 0;
+    &.highlight {
+      background-color: $bright-eyed-blue;
+      border-color: $bright-eyed-blue;
+      color: $active-blue;
+    }
+    &.in-flex {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &.color-pink {
+    color: $blep-pink !important;
+  }
+
+  &.color-green {
+    color: $bright-green !important;
+  }
+
+  &.color-yellow {
+    color: $treat-yellow !important;
+  }
+}

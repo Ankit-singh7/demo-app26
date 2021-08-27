@@ -1,0 +1,40 @@
+<ion-content #insightsContent [fullscreen]="true">
+  <app-homepage-header page="Summary" type="primary">
+  </app-homepage-header>
+  <div class="insights-container">
+    <section class="pins">
+      <h5>Pinned to-dos</h5>
+      <div class="empty-state-pins" *ngIf="latestTodos.length === 0 && allTodos.length === 0">
+        <img class="border-bg" src="../../../../assets/tracker/new-record-bg.svg" />
+        <div class="text-container">
+          <p>You haven't pinned any to-dos here for the moment. <span class="pin-link medium" (click)="openPinInfoPopup()">What's this?</span></p>
+        </div>
+      </div>
+      <ng-container *ngFor="let todos of latestTodos">
+        <p class="date">{{formatDay(todos.date) }} {{ todos.date | date:'LLLL yyyy'}}</p>
+        <app-pinned-result [todos]="todos.todos" (delete)='deleteTodo($event)'></app-pinned-result>
+      </ng-container>
+  
+      <div class="other-pins" *ngIf="allTodos.length > 0">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="detect()" (closed)="detect()">
+            <mat-expansion-panel-header >
+              <mat-panel-title><h5>Other pins ({{allTodosCount}})</h5></mat-panel-title>
+            </mat-expansion-panel-header>
+            <ng-container *ngFor="let todos of allTodos">
+              <p class="date">{{formatDay(todos.date) }} {{ todos.date | date:'LLLL yyyy'}}</p>
+              <app-pinned-result [todos]="todos.todos" (delete)='deleteTodo($event)'></app-pinned-result>
+            </ng-container>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </section>
+    <section class="overview">
+      <h5 [ngClass]="{'hasBorder': allTodos.length > 0, 'disableTopPadding': latestTodos.length > 0 && allTodos.length === 0}">Overview</h5>
+      <app-overview-tile title="average poops checked per day" data="{{ averageResult }}"></app-overview-tile>
+      <app-overview-tile title="most common results" data="{{ commonResult}}"></app-overview-tile>
+      <app-overview-tile title="most common note" data="{{ commonNote }}"></app-overview-tile>
+
+    </section>
+  </div>
+</ion-content>

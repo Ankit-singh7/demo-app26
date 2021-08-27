@@ -1,0 +1,19 @@
+<ion-content>
+  <app-homepage-header page="Account" type="secondary" hasBackButton="true"></app-homepage-header>
+  <section class="first-time">
+    <div class="first-time-container">
+      <div class="email-container">
+        <label class="email">EMAIL</label>
+        <p>{{user?.mail}}</p>
+      </div>
+      <div class="password-container">
+        <label class="password">PASSWORD</label>
+        <a (click)="openModal('reset-password')">Reset my password</a>
+      </div>
+    </div>
+  </section>
+  <section class="delete-intents">
+    <a (click)="openModal('delete-data')">Delete all data</a>
+    <a (click)="openModal('delete-account')">Delete account</a>
+  </section>
+</ion-content>

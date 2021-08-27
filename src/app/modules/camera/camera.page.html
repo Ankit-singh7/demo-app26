@@ -1,0 +1,12 @@
+<ion-content>
+  <section>
+    <div class="photo"
+        [ngStyle]="{'background-image': 'url(' + IMAGE_PATH + ')'}"
+        [ngClass]="{'blur': blurImage}"
+    ></div>
+    <div class="cover" [ngClass]="{'hidden': !isLoading}">
+      <app-spinner colour="white"></app-spinner>
+    </div>
+  </section>
+</ion-content>
+ 

@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Food & water",
+    "tiles": [
+      {
+        "title": "New food",
+        "icon": "Foodwater/New food.svg",
+        "use": false
+      },
+      {
+        "title": "Ate waste",
+        "icon": "Foodwater/Ate waste.svg",
+        "use": false
+      },
+      {
+        "title": "Off their food",
+        "icon": "Foodwater/Off their food.svg",
+        "use": false
+      },
+      {
+        "title": "Drinking less",
+        "icon": "Foodwater/Drinking less.svg",
+        "use": false
+      }
+    ]
+  },
+  {
+    "title": "Observations",
+    "tiles": [
+      {
+        "title": "Blood",
+        "icon": "Observations/Blood.svg",
+        "use": false
+      },
+      {
+        "title": "Worms",
+        "icon": "Observations/Worms.svg",
+        "use": false
+      },
+      {
+        "title": "Something odd",
+        "icon": "Observations/Something odd.svg",
+        "use": false
+      },
+      {
+        "title": "Straining",
+        "icon": "Observations/Straining.svg",
+        "use": false
+      }
+    ]
+  },
+  {
+    "title": "Digestion",
+    "tiles": [
+      {
+        "title": "Bloated",
+        "icon": "Digestion/Bloated.svg",
+        "use": false
+      },
+      {
+        "title": "Flatulence",
+        "icon": "Digestion/Flatulence.svg",
+        "use": false
+      }
+    ]
+  },
+  {
+    "title": "Energy",
+    "tiles": [
+      {
+        "title": "Normal energy",
+        "icon": "Energy/Normal energy.svg",
+        "use": false
+      },
+      {
+        "title": "Low energy",
+        "icon": "Energy/Low energy.svg",
+        "use": false
+      },
+      {
+        "title": "High energy",
+        "icon": "Energy/High energy.svg",
+        "use": false
+      },
+      {
+        "title": "Nervous energy",
+        "icon": "Energy/Nervous energy.svg",
+        "use": false
+      }
+    ]
+  },
+  {
+    "title": "Medical",
+    "tiles": [
+      {
+        "title": "Vomiting",
+        "icon": "Medical/Vomiting.svg",
+        "use": false
+      },
+      {
+        "title": "High temperature",
+        "icon": "Medical/High temp.svg",
+        "use": false
+      },
+      {
+        "title": "New medication",
+        "icon": "Medical/Different medication.svg",
+        "use": false
+      },
+      {
+        "title": "Recovering",
+        "icon": "Medical/Recovering.svg",
+        "use": false
+      }
+    ]
+  }
+]

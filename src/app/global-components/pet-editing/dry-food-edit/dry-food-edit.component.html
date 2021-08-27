@@ -1,0 +1,31 @@
+<ion-text class="ion-text-center">
+  <h4 *ngIf="type === 'onboarding'">Which dry food do you feed {{pet?.gender === 'male' ? 'him' : pet?.gender === 'female' ? 'her' : pet?.name}}?</h4>
+  <h5 *ngIf="type !== 'onboarding'">Current dry food</h5>
+</ion-text>
+<div class="input-container">
+  <ion-item>
+    <ion-searchbar placeholder="Start typing a dry food" debounce="500" [(ngModel)]="searchBar"
+                   #foodSearch (ionChange)="filterList($event)" class="dry-search"
+                   showCancelButton="never" (ionFocus)="onKeyboardStateChange(true)" (keyup)="closeKeyboard($event)"
+    >
+      <p class="large add-food-button" (click)="dryFoodCustom(searchBar)">Add</p>
+    </ion-searchbar>
+  </ion-item>
+  <ion-item *ngIf="isItemAvailable" class="search-results-container" [class.no-autocomplete]="dryFoodsList.length === 0">
+    <div class="search-results">
+      <div *ngIf="dryFoodsList && dryFoodsList.length > 0">
+        <ion-list >
+          <ion-item *ngFor="let item of dryFoodsList" button detail="false" (click)="dryFoodClicked(item)">{{ item }}</ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-item>
+  <ion-item class="list">
+    <div class="dry-foods">
+      <div class="dry-food" *ngFor="let dryFood of petDryFoods">
+        <p>{{dryFood}}</p>
+        <div class="delete-icon" (click)="removeItem(dryFood)"><img src="../../../../assets/pet-details/close.svg" /></div>
+      </div>
+    </div>
+  </ion-item>
+</div>

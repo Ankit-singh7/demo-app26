@@ -1,0 +1,67 @@
+<div class="scale-text-container">
+  <p class="xsmall">Too dry</p>
+  <p class="xsmall">Too wet</p>
+</div>
+<ng-container *ngIf="viewType === 'daily'; else monthly">
+  <div class="record-container" *ngFor="let result of results.entries; let i = index"
+  [ngClass]="{
+    hidedetails: !toggleDetails,
+    hasCustomNote: result.customNote || result.presetNotes?.length > 0
+  }"
+>
+  <div class="scale-container">
+    <div class="lighter-scale-section"></div>
+    <div class="dots-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <!-- for blood -->
+    <!-- <div [style.left]="'calc(' + convertScoreToPercentage(result.analysisScore) + '% - 16px)'" class="pill" [class.hasBlood]="result.bloodHasBlood">
+      <img src="../../../assets/tracker/B.svg" />
+    </div> -->
+    <div [style.left]="'calc(' + convertScoreToPercentage(result.analysisScore) + '% - 16px)'" class="pill"></div>
+  </div>
+  <div class="record-info-container">
+    <h2></h2>
+    <div class="record-time-data">
+      <span class="bold">Poop {{ type === 'result' ? result.currentEntry : i+1 }}</span><span class="bold"> • </span> <span class="bold">{{result.id | timezone | async}}</span>
+    </div>
+    <div class="record-result-type">
+      <p class="message">{{result.analysisMessage}}</p>
+      <!-- for blood -->
+      <!-- <div class="blood-container" *ngIf="result.bloodHasBlood">
+        <p class="blood">Blood: yes</p>
+        <div class="red-dot"></div>
+      </div> -->
+    </div>
+    <div class="record-notes" *ngIf="result.customNote || result.presetNotes?.length > 0">
+      <div class="border"></div>
+      <label class="bold">YOUR NOTE:</label>
+      <p *ngIf="result.presetNotes?.length > 0">{{ result.presetNotes.join(", ") }}</p>
+      <br *ngIf="result.presetNotes?.length > 0">
+      <p *ngIf="result.customNote">{{ result.customNote }}</p>
+    </div>
+  </div>
+</div>
+</ng-container>
+<ng-template #monthly>
+  <div class="record-container {{viewType}}">
+    <div class="scale-container" *ngFor="let result of results.entries; let i = index">
+      <div class="scale-container">
+        <div class="lighter-scale-section"></div>
+        <div class="dots-container">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div [style.left]="'calc(' + convertScoreToPercentage(result.analysisScore) + '% - 16px)'" class="pill"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+

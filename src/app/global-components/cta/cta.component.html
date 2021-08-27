@@ -1,0 +1,5 @@
+<button type="{{isSubmit ? 'submit' : ''}}" class=" {{ type }} medium ripple-parent" [class.ion-activatable]="!highlight" [ngClass]="{'disabled': disabled, 'highlight': highlight, 'registered': registered}">
+  <div class="text" [class.icon]="showIcon">{{ text }}</div>
+  <!-- <img *ngIf="showPin" src="../../../assets/icon/pin.svg" /> -->
+  <ion-ripple-effect *ngIf="!disabled"></ion-ripple-effect>
+</button>

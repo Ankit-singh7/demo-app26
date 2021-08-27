@@ -1,0 +1,55 @@
+@import "../../../theme/colours.scss";
+  .pin-container {
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.07);
+    background-color: white;
+    padding: 12px;
+    padding-bottom: 24px;
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 0.2s, opacity 0.2s, padding-top 0.2s, padding-bottom 0.2s;
+    &.hidden {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+    }
+    .category-container {
+      display: flex;
+      align-items: center;
+
+        .category-title {
+          padding-top: 2px;
+          margin-left: 10px;
+          font-size: 10px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: $first-place-blue;
+          &.caution {
+            color: $favourite-ball-red;
+          }
+        }
+      }
+    
+    .content-container {
+      padding: 24px 12px;
+      .title, .copy {
+        color: $night-time-blue;
+      }
+      .copy {
+        padding-top: 8px;
+      }
+    }
+    app-cta {
+      width: calc(100% - 24px);
+      display: block;
+      margin: 0 auto;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+    &:last-of-type {
+      margin-bottom: 32px;
+    }
+  }
+

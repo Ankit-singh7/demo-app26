@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+       "target": "https://ciam-sb.mars.com",
+       "changeOrigin": true,
+       "secure": false,
+       "logLevel": "debug",
+       "pathRewrite": {"^/api": ""}
+     }
+   }

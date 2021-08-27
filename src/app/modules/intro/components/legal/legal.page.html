@@ -1,0 +1,22 @@
+<ion-content>
+
+  <section>
+    <div class="back-button" [hidden]="signedIn">
+      <app-back-cta (click)="goBack()"></app-back-cta>
+    </div>
+    <div class="legal-container">
+      <div class="legal-copy">
+        <h3>Before we dive in...</h3>
+        <p>
+          This app is designed to help you monitor the wellbeing of your pet. It is not a diagnostic tool and does not replace regular consultations with your vet.
+          <br /><br />
+          If you are at all concerned about your dog’s health you should seek advice from a qualified vet.
+        </p>
+      </div>
+    </div>
+    <div class="next-btn" id="legal-next-cta-wrapper">
+      <app-cta id="legal-next-cta" type="primary blue" text="Ok, let's go!" (click)="navigate()"></app-cta>
+    </div>
+  </section>
+</ion-content>
+

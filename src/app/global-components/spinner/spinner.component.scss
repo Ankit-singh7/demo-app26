@@ -1,0 +1,18 @@
+.spinner {
+  position: relative;
+  width: 63px;
+  height: 63px;
+  img {
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    top: 50%;
+    left: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(360deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}

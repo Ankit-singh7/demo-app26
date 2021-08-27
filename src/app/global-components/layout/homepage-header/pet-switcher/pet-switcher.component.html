@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="pet-switcher-container">
+    <div class="item current" (click)="closeMenu()">
+      <div class="img-container">
+        <div class="photo" [ngStyle]="{'background-image': 'url(' + petImage + ')'}"></div>
+
+      </div>
+      <p class="name">{{currentPetName}}</p>
+    </div>
+    <ng-container *ngFor="let pet of pets">
+      <div class="item" *ngIf="pet.name !== currentPetName" (click)="switchPet(pet)">
+        <div class="photo" [style.backgroundImage]="pet | petPhoto"></div>
+        <p class="name">{{pet.name}}</p>
+      </div>
+    </ng-container>
+    <div *ngIf="pets.length < 8" class="add-dog item" (click)="addPet()">
+      <img  src="../../../assets/menus/plus.svg" />
+      <p>Add another dog</p>
+    </div>
+  </div>
+</ion-content>

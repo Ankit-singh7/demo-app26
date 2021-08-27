@@ -1,0 +1,191 @@
+@import "../../../../theme/colours.scss";
+
+
+ion-content {
+  --background: #f0f0f2;
+  --padding-bottom: 64px;
+}
+
+section {
+
+  &.pets-header {
+    background-color: $white-teeth;
+    margin-top: -40px;
+    padding: 72px 32px 32px 0;
+    border-bottom-right-radius: 40px;
+    align-items: center;
+    position: relative;
+    .pet-image-container {
+      width: 175px;
+      height: 175px;
+      margin-left: -15px;
+      position: relative;
+      display: inline-block;
+      .pet-image {
+        border-radius: 50%;
+        position: absolute;
+        height: 175px;
+        width: 175px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .camera-icon {
+        position: absolute;
+        bottom: 0;
+        right: -7px;
+        cursor: pointer;
+      }
+    }
+    .pet-details {
+      display: inline-block;
+      margin-left: 31px;
+      min-width: 150px;
+      position: absolute;
+      top: 60%;
+      transform: translateY(-60%);
+    }
+    .pet-breed, .pet-name {
+      width: 100%;
+      padding-right: 32px;
+      word-break: break-word;
+    }
+    .pet-breed {
+      margin-top: 8px;
+    }
+    label {
+      color: $grey-2;
+    }
+  }
+
+  &.pets-toggle {
+    width: calc(100% - 64px);
+    margin: 18px auto;
+    text-align: center;
+    position: relative;
+    height: 36px;
+    border-radius: 26px;
+    overflow: hidden;
+
+    .background {
+      background-color: $grey-5;
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+    }
+
+    .toggle-left {
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .toggle-right {
+      display: inline-block;
+      text-align: center;
+      width: 50%;
+      cursor: pointer;
+    }
+
+    .toggle-left, .toggle-right {
+      p {
+        line-height: 39px;
+        line-height: 3.9rem;
+        color: $grey-2;
+        font-family: 'Aeonik-Medium';
+      }
+      &.active {
+        p {
+          color: $first-place-blue;
+        }
+      }
+    }
+
+    .active-bg {
+      position: absolute;
+      z-index: 4;
+      background-color: $blep-pink;
+      width: 50%;
+      left: 0;
+      height: 100%;
+      border-radius: 26px;
+      transition: left 0.5s ease;
+      &.right {
+        left: 50%;
+      }
+    }
+
+    .toggle {
+      position: relative;
+      z-index: 5;
+    }
+
+  }
+  &.pets-detail {
+    background-color: $white-teeth;
+    padding: 16px 32px 40px 32px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    p.error {
+      padding-top: 8px;
+    }
+    .detail-row {
+      border-bottom: 1px solid $grey-5;
+      padding: 24px 0 16px;
+      &.error {
+        border-color: $bad-dog-red;
+      }
+      label {
+        color: $paw-pink;
+      }
+      .detail {
+        margin-top: 8px;
+        p::first-letter {
+          text-transform: uppercase;
+        }
+      }
+      &.weight-details {
+        .detail-title {
+          img {
+            padding-left: 5px;
+            cursor: pointer;
+          }
+        }
+        .detail {
+          ion-input {
+            font-size: 16px;
+          }
+        }
+      }
+      &.meals-per-day {
+        .detail {
+          width: 100%;
+          height: 18px;
+          p {
+            display: inline-flex;
+            text-transform: capitalize;
+          }
+          p:not(:last-child) {
+            &:after {
+              content: '•';
+              margin: 0 5px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.disclaimer-container {
+  margin: 24px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 8px;
+  p {
+    line-height: 20px;
+  }
+}

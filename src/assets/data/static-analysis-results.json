@@ -1,0 +1,314 @@
+{
+  "1": {
+    "score":1,
+    "message": "On the dry side",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "This could be normal for <dog-name>. If so, continue to monitor <his-her-check> poop but be sure to look for any signs of discomfort, difficulty pooping or ill health and to notice if <he-she-check> is pooping less frequently than usual."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "consult",
+        "copy": "If this is unusual for <dog-name> or <he-she-check> seems unwell, uncomfortable while pooping or is not pooping everyday please ask <dog-name>’s vet for advice. Signs of ill health to look out for include: blood in their poop, loss of appetite tiredness."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Dogs are usually quite good at self-hydrating, but make sure <dog-name> always has plenty of fresh water available."
+      }
+    ]
+  },
+  "1.25": {
+    "score":1.25,
+    "message": "On the dry side",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "This could be normal for <dog-name>. If so, continue to monitor <his-her-check> poop but be sure to look for any signs of discomfort, difficulty pooping or ill health and to notice if <he-she-check> is pooping less frequently than usual."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "consult",
+        "copy": "If this is unusual for <dog-name> or <he-she-check> seems unwell, uncomfortable while pooping or is not pooping everyday please ask <dog-name>’s vet for advice. Signs of ill health to look out for include: blood in their poop, loss of appetite tiredness."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Dogs are usually quite good at self-hydrating, but make sure <dog-name> always has plenty of fresh water available."
+      }
+    ]
+  },
+  "1.5": {
+    "score":1.5,
+    "message": "On the dry side",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "This could be normal for <dog-name>. If so, continue to monitor <his-her-check> poop but be sure to look for any signs of discomfort, difficulty pooping or ill health and to notice if <he-she-check> is pooping less frequently than usual."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "consult",
+        "copy": "If this is unusual for <dog-name> or <he-she-check> seems unwell, uncomfortable while pooping or is not pooping everyday please ask <dog-name>’s vet for advice. Signs of ill health to look out for include: blood in their poop, loss of appetite tiredness."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Dogs are usually quite good at self-hydrating, but make sure <dog-name> always has plenty of fresh water available."
+      }
+    ]
+  },
+  "1.75": {
+    "score":1.75,
+    "message": "Perfect​!",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "<dog-name>’s poops are looking good. Keep doing what you’re doing!"
+      },
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "Continue to monitor <dog-name>’s poops and general health to help spot any upsets early."
+      }
+    ]
+  },
+  "2": {
+    "score":2,
+    "message": "Perfect​!",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "<dog-name>’s poops are looking good. Keep doing what you’re doing!"
+      },
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "Continue to monitor <dog-name>’s poops and general health to help spot any upsets early."
+      }
+    ]
+  },
+  "2.25": {
+    "score":2.25,
+    "message": "Perfect!",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "<dog-name>’s poops are looking good. Keep doing what you’re doing!"
+      },
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "Continue to monitor <dog-name>’s poops and general health to help spot any upsets early."
+      }
+    ]
+  },
+  "2.5": {
+    "score":2.5,
+    "message": "Perfect!",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "<dog-name>’s poops are looking good. Keep doing what you’re doing!"
+      },
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "Continue to monitor <dog-name>’s poops and general health to help spot any upsets early."
+      }
+    ]
+  },
+  "2.75": {
+    "score":2.75,
+    "message": "Perfect!",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "<dog-name>’s poops are looking good. Keep doing what you’re doing!"
+      },
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "Continue to monitor <dog-name>’s poops and general health to help spot any upsets early."
+      }
+    ]
+  },
+  "3": {
+    "score":3,
+    "message": "Perfect!",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "<dog-name>’s poops are looking good. Keep doing what you’re doing!"
+      },
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "Continue to monitor <dog-name>’s poops and general health to help spot any upsets early."
+      }
+    ]
+  },
+  "3.25": {
+    "score":3.25,
+    "message": "A little wet, but ok",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "This could be normal for <dog-name>. Continue to monitor <his-her-check> poop and track <his-her-check> appetite and energy levels."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If this is unusual for <dog-name> or <he-she-check> seems unwell, consult <his-her-check> vet for advice."
+      }
+    ]
+  },
+  "3.5": {
+    "score":3.5,
+    "message": "A little wet, but ok",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "This could be normal for <dog-name>. Continue to monitor <his-her-check> poop and track <his-her-check> appetite and energy levels."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If this is unusual for <dog-name> or <he-she-check> seems unwell, consult <his-her-check> vet for advice."
+      }
+    ]
+  },
+  "3.75": {
+    "score":3.75,
+    "message": "A little wet, but ok",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "This could be normal for <dog-name>. Continue to monitor <his-her-check> poop and track <his-her-check> appetite and energy levels."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If this is unusual for <dog-name> or <he-she-check> seems unwell, consult <his-her-check> vet for advice."
+      }
+    ]
+  },
+  "4": {
+    "score":4,
+    "message": "Too wet (diarrhoea)",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "You should closely monitor <dog-name>’s poops and if there are any signs of ill health e.g. vomiting or loss of appetite, or <he-she-check>’s pooping much more frequently than usual, contact <his-her-check> vet for advice."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If <dog-name>’s poops are always too wet, and/or <he-she-check>’s pooping more frequently than usual, you should consult <his-her-check> vet for advice, they may suggest changing <dog-name>’s diet or want to investigate a bit further."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Loose stools can lead to dehydration so make sure <dog-name> always has plenty of clean water available. Dietary changes can also help to improve your dog’s poop – ask your vet for advice."
+      }
+    ]
+  },
+  "4.25": {
+    "score":4.25,
+    "message": "Too wet (diarrhoea)",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "You should closely monitor <dog-name>’s poops and if there are any signs of ill health e.g. vomiting or loss of appetite, or <he-she-check>’s pooping much more frequently than usual, contact <his-her-check> vet for advice."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If <dog-name>’s poops are always too wet, and/or <he-she-check>’s pooping more frequently than usual, you should consult <his-her-check> vet for advice, they may suggest changing <dog-name>’s diet or want to investigate a bit further."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Loose stools can lead to dehydration so make sure <dog-name> always has plenty of clean water available. Dietary changes can also help to improve your dog’s poop – ask your vet for advice."
+      }
+    ]
+  },
+  "4.5": {
+    "score":4.5,
+    "message": "Too wet (diarrhoea)",
+    "suggestions": [
+      {
+        "categoryIcon": "monitoring-watch",
+        "categoryTitle": "Monitor",
+        "copy": "You should closely monitor <dog-name>’s poops and if there are any signs of ill health e.g. vomiting or loss of appetite, or <he-she-check>’s pooping much more frequently than usual, contact <his-her-check> vet for advice."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If <dog-name>’s poops are always too wet, and/or <he-she-check>’s pooping more frequently than usual, you should consult <his-her-check> vet for advice, they may suggest changing <dog-name>’s diet or want to investigate a bit further."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Loose stools can lead to dehydration so make sure <dog-name> always has plenty of clean water available. Dietary changes can also help to improve your dog’s poop – ask your vet for advice."
+      }
+    ]
+  },
+  "4.75": {
+    "score":4.75,
+    "message": "Extremely wet (diarrhoea)",
+    "suggestions": [
+      {
+        "categoryIcon": "caution",
+        "categoryTitle": "Caution",
+        "copy": "Your dog’s poop is very soft or liquid. You should monitor <dog-name> closely. If this lasts more than 24 hours or if <dog-name> is unwell or has a high frequency of poops then consult <his-her-check> vet immediately. Signs of ill health to look out for include: vomiting, fever, blood in their poop, high frequency of poops, weight loss or loss of appetite."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If <dog-name>’s diarrhoea has persisted for more than 24 hours, or if you have seen other signs of ill health, then consult <his-her-check> vet immediately. Continue to track <dog-name>’s poops until your appointment. Recording more detail in the results section will help <his-her-check> vet with a diagnosis."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Diarrhoea can lead to dehydration so make sure <dog-name> always has plenty of clean, fresh water available (unless advised otherwise by your vet). Dietary changes can also help to improve your dog’s poop – ask your vet for advice."
+      }
+    ]
+  },
+  "5": {
+    "score":5,
+    "message": "Extremely wet (diarrhoea)",
+    "suggestions": [
+      {
+        "categoryIcon": "caution",
+        "categoryTitle": "Caution",
+        "copy": "Your dog’s poop is very soft or liquid. You should monitor <dog-name> closely. If this lasts more than 24 hours or if <dog-name> is unwell or has a high frequency of poops then consult <his-her-check> vet immediately. Signs of ill health to look out for include: vomiting, fever, blood in their poop, high frequency of poops, weight loss or loss of appetite."
+      },
+      {
+        "categoryIcon": "consult",
+        "categoryTitle": "Consult",
+        "copy": "If <dog-name>’s diarrhoea has persisted for more than 24 hours, or if you have seen other signs of ill health, then consult <his-her-check> vet immediately. Continue to track <dog-name>’s poops until your appointment. Recording more detail in the results section will help <his-her-check> vet with a diagnosis."
+      },
+      {
+        "categoryIcon": "nutrition",
+        "categoryTitle": "Nutrition",
+        "copy": "Diarrhoea can lead to dehydration so make sure <dog-name> always has plenty of clean, fresh water available (unless advised otherwise by your vet). Dietary changes can also help to improve your dog’s poop – ask your vet for advice."
+      }
+    ]
+  }
+}

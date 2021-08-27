@@ -1,0 +1,67 @@
+@import "../../../../theme/colours.scss";
+
+.header-container {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  z-index: 2;
+  &.primary {
+    background-color: $first-place-blue;
+    .page-name {
+      color: white;
+    }
+  }
+  &.secondary {
+    background-color: white;
+    .page-name {
+      color: $night-time-blue;
+    }
+  }
+  border-bottom-right-radius: 40px;
+  position: relative;
+  .page-name {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 24px;
+    left: 32px;
+  }
+  .menus {
+    padding-top: 14px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pet-switcher-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    left: 16px;
+    .pet-name {
+      color: white;
+      margin: 0 10px;
+      font-family: "Aeonik-Bold";
+      padding-top: 2px;
+    }
+    .pet-photo {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: none;
+    }
+  }
+  .account-menu-container {
+    position: relative;
+    right: 16px;
+  }
+  .back-button {
+    left: 24px;
+    padding-top: 0;
+    margin-top: -8px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 48px);
+  }
+}

@@ -1,0 +1,7 @@
+<div class="inner" [class.empty]="!data">
+  <img class="border-bg" src="../../../../assets/tracker/new-record-bg.svg" />
+  <div class="tile-container">
+    <p class="title xsmall">{{ title }}</p>
+    <p [class.empty]="!data" class="data">{{data ? data : 'Insufficient or competing data' }}</p>
+  </div>
+</div>

@@ -1,0 +1,191 @@
+@import "../../../theme/colours.scss";
+
+ion-content {
+  --overflow: hidden;
+
+  section {
+    background-color: $grey-6;
+    height: 100%;
+    padding: 0 24px 0;
+
+    .back-button {
+      position: absolute;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 48px);
+      .quit {
+        margin-left: auto;
+        display: inline-block;
+        margin-right: -8px;
+        vertical-align: 3.5px;
+        span {
+          margin-right: 8px;
+          color: $active-blue;
+          vertical-align: 3.5px;
+        }
+        img {
+          padding-bottom: 2px;
+        }
+      }
+    }
+
+    .cards-container {
+      height: calc(100vh + 100px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .details-img {
+      position: relative;
+      max-width: 120px;
+      margin: -130px auto 0;
+      z-index: 5;
+    }
+
+    .next-btn {
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      left: 0;
+      &.disabled {
+        pointer-events: none;
+      }
+    }
+
+    .details-card {
+      width: 100%;
+      padding: 24px;
+      position: relative;
+      min-height: 520px;
+      @media all and (max-height: 640px) {
+        min-height: 420px;
+      }
+      z-index: 3;
+    }
+
+    .input-container {
+      padding-top: 48px;
+      @media all and (max-height: 640px) {
+        padding-top: 24px;
+      }
+    }
+  }
+
+  ion-item {
+    border: none !important;
+    background: none !important;
+    --border-style: none;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    overflow: visible;
+    position: relative;
+    z-index: 4;
+
+    &.item-searchbar {
+      z-index: 5;
+    }
+
+    &.item-has-focus, &.searchbar-has-focus {
+      --highlight-background: transparent;
+      
+    }
+  }
+
+  form {
+    width: 100%;
+  }
+
+  ion-input {
+    border-radius: 4px;
+    --background: #FFFFFF;
+    border: none;
+    --icon-color: $night-time-blue;
+    --padding-start: 23px;
+    --padding-top: 12px;
+    --padding-end: 46px;
+    --padding-bottom: 12px;
+    width: 100%;
+  }
+
+  ion-searchbar {
+    --background: #FFFFFF;
+    width: 100%;
+    padding: 0;
+    --icon-color: #1F2E71;
+    height: 48px;
+  }
+
+  .details-card-bg1 {
+    position: absolute;
+    height: 100px;
+    left: 0;
+    right: 0;
+    top: -10px;
+    z-index: 2;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  .details-card-bg2 {
+    position: absolute;
+    margin: 0 auto;
+    width: calc(100% - 64px);
+
+    height: 100px;
+    left: 0;
+    right: 0;
+    top: -20px;
+    z-index: 1;
+  }
+
+  .card, .card-bg {
+    background: #FFFFFF;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+  }
+
+  .card-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    left: 0;
+    top: 0;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    min-height: 472px;
+    @media all and (max-height: 640px) {
+      min-height: 372px;
+    }
+    padding-top: 16px;
+    .question-container {
+      margin-top: 28px;
+      
+      @media all and (max-height: 640px) {
+        margin-top: 14px;
+      }
+      .error {
+        padding-top: 8px;
+      }
+    }
+  }
+
+  .age-buttons, .frequency-buttons {
+    padding-top: 48px;
+    @media all and (max-height: 640px) {
+      padding-top: 24px;
+    }
+  }
+}

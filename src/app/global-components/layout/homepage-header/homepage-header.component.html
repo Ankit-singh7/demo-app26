@@ -1,0 +1,17 @@
+<div class="header-container" class="{{type}}">
+  <div class="menus">
+    <!-- dog switch menu -->
+    <div *ngIf="type === 'primary'" class="pet-switcher-container" (click)="openPetSwitcher($event)">
+      <div class="item pet-photo" [ngStyle]="{'background-image': 'url(' + petImage + ')'}"></div>
+      <p class="pet-name">{{currentPet.name}}</p>
+      <img class="dropdown" src="../../../assets/menus/dropdown.svg"/>
+    </div>
+    <div *ngIf="type === 'primary'" class="account-menu-container">
+      <app-account-menu></app-account-menu>
+    </div>
+  </div>
+  <div class="back-button" *ngIf="hasBackButton">
+    <app-back-cta (click)="goBack()"></app-back-cta>
+  </div>
+  <h3 class="page-name">{{ page }}</h3>
+</div>

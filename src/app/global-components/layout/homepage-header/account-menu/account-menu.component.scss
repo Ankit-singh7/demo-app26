@@ -1,0 +1,27 @@
+@import "../../../../../theme/colours.scss";
+
+
+.menu-container {
+  padding: 0 24px;
+  max-width: 219px;
+  .img-container {
+    margin-left: 12px;
+    width: 100%;
+    text-align: right;
+  }
+  .category-container {
+    label {
+      color: $grey-3;
+      display: block;
+      margin-bottom: 8px;
+     }
+    p {
+      margin-bottom: 24px;
+    }
+    &.help, &.sign-out {
+      padding-top: 24px;
+      border-top: 1px solid rgba(151,152,153, 0.25);
+    }
+  }
+
+}

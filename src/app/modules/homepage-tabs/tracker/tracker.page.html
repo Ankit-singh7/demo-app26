@@ -1,0 +1,81 @@
+<ion-content #trackerContent [fullscreen]="true">
+  <app-homepage-header page="Tracker" type="primary">
+  </app-homepage-header>
+  <!-- <section class="intro" *ngIf="this.data?.length === 0; else actionsBlock"></section>
+  <ng-template #actionsBlock>
+    <section class="actions"></section>
+  </ng-template>
+  <section class="selectors"></section> -->
+  <section class="tell-us-more" (click)="goToTellUsMore()" [hidden]="tellUsMoreDismissed">
+    <div class="tell-us-more-container">
+      <div class="close" (click)="dismissTellUsMoreBanner($event)">
+        <img src="../../../../assets/tracker/close.svg" />
+      </div>
+      <!-- <div class="pet-photo" [ngStyle]="{'background-image': 'url(' + petImage + ')'}"></div> -->
+      <ion-text>
+        <h5 class="medium tell-us-more-text">Tell us more about {{petName}}</h5>
+      </ion-text>
+    </div>
+  </section>
+<!--  <app-cta type="primary" text="show tell us more" (click)="showTellUsMore()"></app-cta>-->
+
+  <section class="first-time" *ngIf="!takenRecord">
+    <div class="first-time-container">
+      <ion-text>
+        <h4>There’s a first time for everything...</h4>
+      </ion-text>
+      <div class="btn-container">
+        <app-cta type="secondary" text="How does this work?" (click)="howDoesThisWork()"></app-cta>
+      </div>
+    </div>
+  </section>
+  <section class="data">
+    <div class="data-controls-container" [class.disabled]="data.length === 0">
+      <ion-select class="select" [(ngModel)]="date"[interfaceOptions]="customPopoverOptions" interface="popover">
+        <ion-select-option value="days">Days</ion-select-option>
+        <ion-select-option value="months">Months</ion-select-option>
+      </ion-select>      
+      <div class="poop-details-container" *ngIf="showToggle && date == 'days'">
+        <ion-text><p class="xsmall">Poop details</p></ion-text>
+        <ion-toggle  checked="{{showDetails}}" disabled="{{data.length === 0}}" (ionChange)="toggleDetails($event)"></ion-toggle>
+      </div>
+    </div>
+
+<!-- if first entry is todays, data is newest first -->
+  <ng-container *ngIf="date == 'days'">
+    <div class="day">
+      <div class="day-inner today">
+        <ion-text><h4>Today</h4></ion-text>
+        <app-record [results]="data[0]" type="tracker" *ngIf="haveTodaysData()" [toggleDetails]="showDetails"></app-record>
+        <div class="record">
+          <a (click)="capture()" >
+            <div class="inner">
+              <img class="border-bg" src="../../../../assets/tracker/new-record-bg.svg" />
+              <div class="capture-container">
+                <img src="../../../../assets/capture.svg">
+                <p class="xsmall">Capture new poop</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="day" *ngFor="let item of data">
+      <div class="day-inner" *ngIf="item.date !== todaysDate">
+        <ion-text><h4>{{formatDay(item.date) }} {{ item.date | date:'LLLL yyyy'}}</h4></ion-text>
+        <app-record [results]="item" type="tracker" [toggleDetails]="showDetails"></app-record>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="date == 'months'">
+    <div class="day" *ngFor="let item of (data | groupBy: 'date');let i = index">
+      <div class="day-inner" [class.first]="i === 0">
+        <ion-text><h4>{{item.key}}</h4></ion-text>
+        <app-record viewType="monthly" [results]="item" type="tracker"></app-record>
+      </div>
+    </div>
+  </ng-container>
+
+    
+  </section>
+</ion-content>

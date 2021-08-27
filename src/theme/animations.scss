@@ -1,0 +1,9 @@
+.fadeOutIn {
+  animation: fadeoutin 0.4s linear forwards;
+}
+
+@keyframes fadeoutin {
+0%,100% { opacity: 1; }
+40% { opacity: 0; }
+60% { opacity: 0; }
+}

@@ -1,0 +1,9 @@
+<div class="popover-container">
+    <img src="{{ '../../../assets/icon/' + modalType + '.svg' }}" />
+  <ion-text class="ion-text-center">
+    <p>{{ text }}</p>
+  </ion-text>
+  <div class="buttons-container">
+    <app-cta text="{{ ctaText }}" type="primary" (click)="close()"></app-cta>
+  </div>
+</div>

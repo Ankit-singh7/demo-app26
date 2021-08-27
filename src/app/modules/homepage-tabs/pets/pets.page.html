@@ -1,0 +1,102 @@
+<ion-content #petsContent [fullscreen]="true">
+  <app-homepage-header page="Pets" type="primary">
+  </app-homepage-header>
+  <section class="pets-header">
+    <div class="pet-image-container" (click)="updatePhoto()">
+      <div class="pet-image" [ngStyle]="{'background-image': 'url(' + petImage + ')'}">
+      </div>
+      <div class="camera-icon">
+        <img src="../../../../assets/pet-details/camera-icon.svg"/>
+      </div>
+    </div>
+    <div class="pet-details">
+      <div class="pet-name"><h4>{{pet.name}}</h4></div>
+      <div class="pet-breed"><label>{{pet.gender}} • {{pet.breed}}</label></div>
+    </div>
+  </section>
+  <section class="pets-toggle">
+    <div class="background"></div>
+    <div class="active-bg" [ngClass]="{'right': activeDetail === 'health'}"></div>
+    <div class="toggle">
+      <div class="toggle-left" (click)="toggleDetail('food')" [ngClass]="{'active': activeDetail === 'food'}"><p>
+        Food</p></div>
+      <div class="toggle-left" (click)="toggleDetail('health')" [ngClass]="{'active': activeDetail === 'health'}"><p>
+        Health</p></div>
+    </div>
+  </section>
+  <section class="pets-detail">
+    <div class="food-details" *ngIf="activeDetail === 'food'">
+      <div class="detail-row">
+        <div class="detail-title"><label>MEAL{{pet.mealFrequency > 1 ? 'S' : ''}} PER DAY</label></div>
+        <div class="detail" (click)="toggleEdit(5)"><p>{{pet.mealFrequency != '' ? pet.mealFrequency : '-'}}</p></div>
+      </div>
+      <div class="detail-row meals-per-day" [class.error]="unMatchingMealTypesMealFrequency || unMatchingMealTypesCurrentFoods">
+        <div class="detail-title"><label>MEAL SPLIT</label></div>
+        <div class="detail" (click)="toggleEdit(6, unMatchingMealTypesMealFrequency)">
+          <p *ngFor="let meal of pet.mealTypePerMeal">{{ meal.foodConsistency }}</p>
+          <p *ngIf="pet.mealTypePerMeal.length === 0">-</p>
+        </div>
+      </div>
+      <p *ngIf="unMatchingMealTypesMealFrequency" class="xsmall error">Please update to match meals per day.</p>
+      <p *ngIf="unMatchingMealTypesCurrentFoods" class="xsmall error">Please update to reflect the fact your dog eats a {{neededFood}} food.</p>
+
+      <div class="detail-row">
+        <div class="detail-title"><label>TREATS</label></div>
+        <div class="detail" (click)="toggleEdit(3)">
+          <p>{{pet.treats === '0' ? 'None' : pet.treats != '' ? pet.treats + ' per day' : '-'}}</p></div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-title"><label>HUMAN TREATS</label></div>
+        <div class="detail" (click)="toggleEdit(2)"><p>{{pet.humanTreats != '' ? pet.humanTreats : '-'}}</p></div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-title"><label>CURRENT DRY FOOD</label></div>
+        <div class="detail" (click)="toggleEdit(9)"><p>{{pet.dryFoods != '' ? pet.dryFoods.join(', ') : '-'}}</p></div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-title"><label>CURRENT WET FOOD</label></div>
+        <div class="detail" (click)="toggleEdit(10)"><p>{{pet.wetFoods != '' ? pet.wetFoods.join(', ') : '-'}}</p></div>
+      </div>
+    </div>
+    <div class="health-details" *ngIf="activeDetail === 'health'">
+      <div class="detail-row">
+        <div class="detail-title"><label>AGE BRACKET</label></div>
+        <div class="detail" (click)="toggleEdit(1)"><p>{{petService.getPetAgeString(pet.age)}}</p></div>
+      </div>
+
+      <div class="detail-row weight-details" [class.error]="noWeight || invalidWeight">
+        <div class="detail-title"><label>CURRENT WEIGHT ({{pet.weightType}})<img (click)="openWeightPicker($event)"
+                                                                                 src="../../../../assets/pet-details/weight-arrow.svg"/></label>
+        </div>
+        <div class="detail">
+          <ion-input type="number" inputmode="decimal" (ionBlur)="setWeight($event.target.value)"
+                     [ngModel]="pet.weight" (keyup)="closeKeyboard($event)"></ion-input>
+        </div>
+      </div>
+      <p *ngIf="noWeight" class="xsmall error">Please enter a number greater than 0</p>
+      <p *ngIf="invalidWeight" class="xsmall error">Please enter a valid weight</p>
+      
+      <div class="detail-row">
+        <div class="detail-title"><label>KNOWN ALLERGIES</label></div>
+        <div class="detail" (click)="toggleEdit(7)"><p>{{!pet.allergies ? 'None' : pet.allergies != '' ? pet.allergies.join(', ') : '-'}}</p>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-title"><label>EXISTING CONDITIONS</label></div>
+        <div class="detail" (click)="toggleEdit(8)"><p>{{!pet.conditions ? 'None' : pet.conditions != '' ? pet.conditions.join(', ') : '-'}}</p>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-title"><label>{{pet.gender == 'male' ? 'NEUTERED' : 'SPAYED'}}</label></div>
+        <div class="detail" *ngIf="!pet.desexedUndecided" (click)="toggleEdit(4)">
+          <p>{{pet.neutered && pet.gender == 'male' || pet.spayed && pet.gender == 'female' ? 'Yes' : pet.neutered == false && pet.gender == 'male' || pet.spayed == false && pet.gender == 'female' ? 'No' : '-'}}</p>
+        </div>
+        <div class="detail" *ngIf="pet.desexedUndecided" (click)="toggleEdit(4)"><p>I don't know</p></div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="activeDetail === 'health'" class="disclaimer-container">
+    <p class="xsmall">Some conditions and allergies may affect the digestion of your dog’s food and quality of their
+      poop. Tracking the quality of their poop can help you, and your vet, monitor your dog’s condition over time.</p>
+  </div>
+</ion-content>

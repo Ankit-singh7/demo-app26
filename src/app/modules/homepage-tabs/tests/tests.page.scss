@@ -1,0 +1,78 @@
+@import "../../../../theme/colours.scss";
+
+section {
+  h4, p {
+    color: $night-time-blue;
+  }
+
+  h4 {
+    padding-bottom: 24px;
+  }
+
+  &.one {
+    margin-top: 32px;
+    background-color: white;
+    border-top-left-radius: 40px;
+    padding: 40px 32px;
+
+    .product-image {
+      padding: 24px 0;
+      width: 100%
+    }
+
+    .line.large {
+      margin-top: 32px;
+    }
+
+    .product-container {
+      .disabled {
+        pointer-events: none;
+      }
+
+      .product-details-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 0;
+      }
+    }
+
+  }
+
+  .line {
+    height: 1px;
+    width: 100%;
+    background-color: $grey-5;
+
+    &.small {
+      margin: 16px 0;
+    }
+
+    &.large {
+      margin: 40px 0;
+    }
+  }
+
+  &.two {
+    padding: 24px 38px;
+
+    .flex-container {
+      display: flex;
+      align-items: flex-start;
+      padding: 8px 0;
+
+      .tick {
+        margin-top: 4px;
+        margin-right: 21px;
+      }
+    }
+
+  }
+
+  &.three {
+    padding: 40px 32px;
+    background-color: white;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 65px;
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "name": "Miome",
+  "integrations": {
+    "capacitor": {},
+    "enterprise": {
+      "keyId": 1392,
+      "productKey": "key_7dcb925a4483420c8b2931ee43df2a36",
+      "appId": "43caea7c",
+      "orgId": "82a51443-9ccd-4037-a676-b44d182d4b2a",
+      "registries": [
+        "@ionic-enterprise;https://registry.ionicframework.com/"
+      ]
+    }
+  },
+  "type": "angular"
+}

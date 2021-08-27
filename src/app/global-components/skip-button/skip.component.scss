@@ -1,0 +1,14 @@
+@import "../../../theme/colours.scss";
+
+.skip {
+  margin: 0 auto;
+  display: inline-block;
+  margin-right: -8px;
+  vertical-align: 3.5px;
+  span {
+    margin-right: 8px;
+    color: $active-blue;
+    vertical-align: 3.5px;
+  }
+  .clearfix { clear: both; }
+}

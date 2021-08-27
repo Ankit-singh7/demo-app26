@@ -1,0 +1,1 @@
+export const randomTwelveDigit = () => Number(String(Math.random()).split(".")[1].substr(-12,12).padStart(12, '9'))

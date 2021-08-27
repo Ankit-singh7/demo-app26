@@ -1,0 +1,17 @@
+@import "../../../theme/colours.scss";
+
+.back {
+  margin: 0 auto;
+  display: inline-block;
+  margin-left: -8px;
+  p {
+    display: inline-block;
+    color: $active-blue;
+    padding-left: 7px;
+    font-family: 'Aeonik-Medium';
+    vertical-align: 3.5px;
+  }
+  img {
+    display: inline-block;
+  }
+}

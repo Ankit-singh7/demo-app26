@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="edit-box">
+    <div class="edit-content age" *ngIf="index == '1'">
+      <app-edit-age (submitData)="submitData($event)"></app-edit-age>
+    </div>
+  
+    <div class="edit-content human-foods" *ngIf="index == '2'">
+      <app-edit-human-foods (submitData)="submitData($event)"></app-edit-human-foods>
+    </div>
+  
+    <div class="edit-content treats" *ngIf="index == '3'">
+      <app-edit-treats (submitData)="submitData($event)"></app-edit-treats>
+    </div>
+  
+    <div class="edit-content de-sexing" *ngIf="index == '4'">
+      <app-edit-de-sexing (submitData)="submitData($event)"></app-edit-de-sexing>
+    </div>
+  
+    <div class="edit-content meals-per-day" *ngIf="index == '5'">
+      <app-edit-meals-per-day (submitData)="submitData($event)"></app-edit-meals-per-day>
+    </div>
+  
+    <div class="edit-content meal-types" *ngIf="index == '6'">
+      <app-edit-meal-types [unMatchingData]="unMatchingData" (submitData)="checkMeals($event)"></app-edit-meal-types>
+    </div>
+  
+    <div class="edit-content allergies" *ngIf="index == '7'">
+      <app-edit-allergies (hasAllergies)="submitData($event)"></app-edit-allergies>
+    </div>
+  
+    <div class="edit-content existing-conditions" *ngIf="index == '8'">
+      <app-edit-conditions (hasConditions)="submitData($event)"></app-edit-conditions>
+    </div>
+  
+    <div class="edit-content dry-food" *ngIf="index == '9'">
+      <app-edit-dry-food (hasDryFoods)="submitData($event)"></app-edit-dry-food>
+    </div>
+  
+    <div class="edit-content wet-food" *ngIf="index == '10'">
+      <app-edit-wet-food (hasWetFoods)="submitData($event)"></app-edit-wet-food>
+    </div>  
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="close-edit">
+    <ng-container *ngIf="index == '6' else defaultCTA">
+      <div class="half-cta">
+        <app-cta type="secondary smart-preset" text="Cancel" (click)="close()"></app-cta>
+      </div>
+      <div class="half-cta">
+        <app-cta type="primary smart-preset" [disabled]="!mealsCompleted" text="Confirm" (click)="submitMealData()"></app-cta>
+      </div>
+    </ng-container>
+    <ng-template #defaultCTA>
+      <app-cta *ngIf="index > '6' else showCancel" type="primary smart-preset" text="Done" (click)="close()"></app-cta>
+      <ng-template #showCancel><app-cta type="secondary smart-preset" text="Cancel" (click)="close()"></app-cta></ng-template>
+    </ng-template>
+  </div>
+</ion-footer>

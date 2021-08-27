@@ -1,0 +1,72 @@
+<ion-content>
+  <app-homepage-header page="Result" type="secondary"></app-homepage-header>
+  <div class="spinner-container" *ngIf="loading">
+    <app-spinner colour="blue"></app-spinner>
+  </div>
+  <section *ngIf="!loading">
+    <div class="scale-container">
+      <app-record [results]="results" type="result" [toggleDetails]="true"></app-record>
+
+    </div>
+    <div class="suggestions-container">
+      <h4>Here’s what we’d suggest</h4>
+      <div class="todo" *ngFor="let todo of resultsTodos">
+        <img src="{{'../../../../assets/icon/suggestion-categories/' + todo.icon + '.svg'}}"/>
+        <p>{{ todo.copy }}</p>
+      </div>
+      <div class="buttons-container">
+        <app-cta text="{{ pinText }}" type="quaternary" [highlight]="showPin" [showIcon]="showPin" (click)="togglePin()"></app-cta>
+      </div>
+    </div>
+  </section>
+  <div class="notes-section" *ngIf="!loading">
+    <div class="title-container flexed">
+      <h4>Add notes?</h4>
+      <app-cta text="Custom" type="quaternary in-flex" [highlight]="hasCustomNote" (click)="toggleCustomNote()"></app-cta>
+    </div>
+    <div class="custom-notes" [ngClass]="{hidden: !hasCustomNote}">
+      <div class="top-border"></div>
+      <p class="title bold">Your note</p>
+      <p class="xsmall limit">{{customNote | charCountdown : charsLimit}} characters remaining</p>
+      <ion-textarea #customNoteRef class="note" rows="6" [ngModel]="customNote" (ngModelChange)="customNoteChange($event)" placeholder="Add your own custom note here..."></ion-textarea>
+      <div class="clear-container">
+        <p class="medium clear" (click)="clearNote()">Clear</p>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="preset-notes">
+      <div class="top-border"></div>
+      <div class="arrows">
+        <div class="arrow prev" [ngClass]="{'inactive': !prevIsActive}" (click)="previousSlide()"><img src="../../../../assets/arrow-previous-dark-blue.svg" alt="previous arrow"></div>
+        <div class="arrow next" [ngClass]="{'inactive': !nextIsActive}" (click)="nextSlide()"><img src="../../../../assets/arrow-next-dark-blue.svg" alt="next arrow"></div>
+      </div>
+      <ion-slides #slider pager="true" class="slider" (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let noteCategory of presetNotes; let j = index" class="slide">
+          <ion-text class="title"><h5>{{noteCategory.title}}</h5></ion-text>
+          <div class="tiles">
+            <div class="tile" *ngFor="let tile of noteCategory.tiles; let i = index" class="tile-{{i}}" (click)="activateTile(j, i, $event)">
+              <div class="background"></div>
+              <div class="icon" style="background-image: url('../../../../assets/results-preset-notes-illustrations/{{tile.icon}}');"></div>
+              <p class="caption">{{tile.title}}</p>
+              <div class="border"></div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+  <div class="disclaimer-container" *ngIf="!loading">
+    <p class="xsmall">If you are at all concerned about your dog’s health you should seek advice from a qualified vet.</p>
+  </div>
+</ion-content>
+
+<ion-footer class="floating-buttons">
+  <div class="buttons-container">
+    <div class="two">
+      <app-cta type="secondary" text="Retake photo" (click)="retake()" [disabled]="loading || showPin"></app-cta>
+    </div>
+    <div class="two">
+      <app-cta type="primary" text="Save and close" (click)="done()" [disabled]="loading"></app-cta>
+    </div>
+  </div>
+</ion-footer>

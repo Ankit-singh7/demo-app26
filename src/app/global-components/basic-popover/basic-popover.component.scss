@@ -1,0 +1,57 @@
+
+@import "../../../theme/colours.scss";
+
+.popover-container {
+  padding: 40px 24px 32px 24px;
+  &.noCta {
+    padding-bottom: 40px;
+    p { 
+      padding-bottom: 0;
+    }
+  }
+  h4 {
+    padding-bottom: 24px;
+  }
+  p {
+    padding-bottom: 24px;
+    color: $night-time-blue;
+  }
+  img {
+    width: 100%;
+  }
+  &.overflow {
+    height: calc(100% - 96px);
+    position: absolute;
+    overflow: scroll;
+  }
+  .icon {
+    width: 40px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+  }
+}
+
+.floating-button {
+  width: 100%;
+  height: 96px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius:  10px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.07);
+
+  .buttons-container {
+    padding: 12px 24px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    app-cta {
+      width: 100%;
+    }
+  }
+}

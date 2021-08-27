@@ -1,0 +1,214 @@
+@import "../../../../theme/colours.scss";
+
+ion-content {
+  ion-slides {
+    --bullet-background: #E3E3E5;
+    --bullet-background-active: #FB949F;
+  }
+
+  .spinner-container {
+    width: 100%;
+    height: calc(100% - 248px); // 160+88 for header and buttons
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section {
+    box-sizing: border-box;
+    width: 100%;
+    .scale-container {
+      padding: 24px;
+    }
+    .suggestions-container {
+      padding: 40px 32px 32px 32px;
+      border-top-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      .todo {
+        padding: 12px 0;
+        &:first-of-type {
+          padding-top: 28px;
+        }
+
+        img {
+          margin-right: 26px;
+        }
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .buttons-container {
+        padding-top: 20px;
+      }
+      app-cta {
+        width: 100%;
+      }
+      margin: 8px 0 32px;
+      background-color: white;
+      
+    }
+  }
+  .notes-section {
+    margin: 20px 0 40px;
+    padding: 32px;
+    background-color: $white-teeth;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    .top-border {
+      width: 100%;
+      height: 1px;
+      background: $grey-5;
+      margin-bottom: 32px;
+    }
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .custom-notes {
+      max-height: 300px;
+      overflow: hidden;
+      transition: max-height 0.5s, opacity 0.25s;
+      &.hidden {
+        max-height: 0;
+        opacity: 0;
+      }
+      .title, .limit {
+        display: inline-block;
+        width: 50%;
+      }
+      .limit {
+        text-align: right;
+        color: $grey-2;
+      }
+      .note {
+        margin: 16px 0;
+        clear: both;
+        width: 100%;
+      }
+      .clear-container {
+        margin-bottom: 32px;
+        .clear {
+          color: $active-blue;
+          float: right;
+        }
+        .clearfix { clear: both; }
+      }
+    }
+  }
+  .disclaimer-container {
+    margin: 0 auto 128px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 10px;
+    width: calc(100% - 48px);
+    p { 
+      color: $night-time-blue;
+      line-height: 20px;
+     }
+  }
+  .preset-notes {
+    position: relative;
+    .top-border {
+      width: 100%;
+      height: 1px;
+      background: $grey-5;
+      margin-bottom: 32px;
+    }
+    .arrows {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      top: 28px;
+      z-index: 5;
+      .arrow {
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        top: 0;
+        &.inactive {
+          pointer-events: none;
+          opacity: 0.3;
+        }
+        img {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &.next {
+          left: auto;
+          right: 0;
+          img {right: 0;}
+        }
+        &.previous {
+          left: 0;
+          img {left: 0;}
+        }
+      }
+    }
+    .slider {
+      width: 100%;
+      .slide {
+        flex-direction: column;
+        margin-bottom: 32px;
+        .title {
+          display: block;
+          margin-bottom: 32px;
+        }
+        .tiles {
+          display: flex;
+          justify-content: space-between;
+          flex-flow: wrap;
+          width: 100%;
+          height: 0;
+          padding-bottom: 100%;
+          position: relative;
+          .tile {
+            position: absolute;
+            border-radius: 16px;
+            width: calc(50% - 4px);
+            height: calc(50% - 4px);
+            &.tile-0 { top: 0; left: 0; }
+            &.tile-1 { top: 0; left: calc(50% + 4px); }
+            &.tile-2 { top: calc(50% + 4px); left: 0; }
+            &.tile-3 { top: calc(50% + 4px); left: calc(50% + 4px); }
+            .background, .icon, .border {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 16px;
+            }
+            .icon {
+              background-position: center;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+            .background {
+              background-color: $white-teeth;
+              transition: background-color 0.25s;
+            }
+            &.active .background {
+              background-color: $treat-yellow;
+            }
+            .border {
+              border: 1px solid $grey-5;
+              transition: border 0.25s;
+            }
+            &.active .border {
+              border: 1px solid $treat-yellow;
+            }
+            .caption {
+              position: absolute;
+              top: auto;
+              bottom: 20px;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

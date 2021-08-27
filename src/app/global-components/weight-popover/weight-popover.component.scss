@@ -1,0 +1,13 @@
+@import "../../../theme/colours.scss";
+
+.weight-popover {
+  ion-item {
+    --min-height: 24px;
+    padding: 10px 0;
+    font-family: 'Aeonik-Regular';
+    border-bottom: none;
+    &.active {
+      color: $grey-3;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<img
+  [matMenuTriggerFor]="aboveMenu"
+  src="../../../../../assets/menus/account-menu-off.svg"
+/>
+<mat-menu #aboveMenu="matMenu" backdropClass="menu-backdrop" class="account-menu" xPosition="before">
+  <div class="menu-container">
+    <div class="img-container">
+      <img src="../../../../../assets/menus/account-menu-on.svg"/>
+    </div>
+    <div class="category-container account">
+      <label>ACCOUNT</label>
+      <div *ngIf="!signedIn">
+        <p (click)="showSignIn(true)">Create account</p>
+        <p (click)="showSignIn()">Sign in</p>
+      </div>
+      <div *ngIf="signedIn" (click)="navigate('user-account')">
+        <p>Manage account</p>
+      </div>
+    </div>
+    <div class="category-container help">
+      <label>HELP</label>
+      <p (click)="openTutorial()">How the scanner poop works</p>
+      <p>FAQS</p>
+      <p (click)="clearData()">-- CLEAR DATA --</p>
+    </div>
+    <div *ngIf="signedIn" class="category-container sign-out" (click)="signOut()">
+      <p>Sign out</p>
+    </div>
+  </div>
+</mat-menu>

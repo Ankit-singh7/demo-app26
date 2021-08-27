@@ -1,0 +1,90 @@
+@import "./colours.scss";
+
+html,
+body {
+  font-size: 62.5%;
+  color: $night-time-blue;
+}
+
+h1, h2, h3, h4, h5, h6, p ,a, span, li, td, label, input, select, textarea, button {
+  -webkit-font-smoothing: antialiased;
+  font-stretch: normal;
+  margin: 0;
+}
+p, span, li, td, label, input, select, textarea, h1, h2, h3, h4, h5, h6, slot {
+  color: $night-time-blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &, &.bold { // default is bold for headers
+    font-family: "Aeonik-Bold";
+  }
+  &.medium {
+    font-family: "Aeonik-Medium";
+  }
+}
+p ,a, span, li, td, label, input, select, textarea {
+  &, &.regular { // default is regular for body copy
+    font-family: "Aeonik-Regular";
+  }
+  &.medium {
+    font-family: "Aeonik-Medium";
+  }
+  &.bold {
+    font-family: "Aeonik-Bold";
+  }
+}
+
+button {
+  font-family: "Aeonik-Medium";
+}
+
+h1 { font-size: 48px; font-size: 4.8rem; }
+h2 { font-size: 40px; font-size: 4.0rem; }
+h3 { font-size: 32px; font-size: 3.2rem; }
+h4 { font-size: 24px; font-size: 2.4rem; }
+h5 { font-size: 20px; font-size: 2.0rem; }
+
+
+p, span, a {
+  &, &.large { // default is large
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 24px;
+  }
+  &.small {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  &.xsmall {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 20px;
+    line-height: 2rem;
+  }
+  &.error {
+    color: $bad-dog-red;
+  }
+}
+
+a {
+  color: $blep-pink;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid $blep-pink;
+  font-family: "Aeonik-Medium";
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 16px;
+  line-height: 1.6rem;
+}
+
+label {
+  font-size: 10px;
+  font-size: 1rem;
+  line-height: 16px;
+  line-height: 1.6rem;
+  font-family: "Aeonik-Bold";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

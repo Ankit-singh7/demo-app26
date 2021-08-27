@@ -1,0 +1,22 @@
+.onboarding {
+  .meals-container {
+    &:first-of-type { padding-top: 48px; }
+  }
+}
+
+.meals-container {
+  label { display: block; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    .btn-container {
+      width: calc(33% - 5px);
+      &:not(last-of-type) {
+        padding-bottom: 31px;
+      }
+    }
+  }
+}

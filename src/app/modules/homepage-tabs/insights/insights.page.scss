@@ -1,0 +1,62 @@
+
+@import "../../../../theme/colours.scss";
+
+ion-content {
+  --background: #f0f0f2;
+}
+.insights-container {
+  padding: 32px 24px 56px 24px;
+  section {
+    &:first-of-type {
+      h5 {
+        padding-top: 0;
+      }
+    }
+    h5 { 
+      padding: 40px 0 24px 0;
+      color: $night-time-blue;
+     }
+     .date {
+       padding-bottom: 16px;
+     }
+    .empty-state-pins {
+      position: relative;
+      height: 100%;
+      .border-bg {
+        width: 100%;
+      }
+      .text-container {
+        height: 100%;
+        top: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          color: $grey-2;
+          padding: 0 24px;
+          .pin-link {
+            color: $active-blue;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &.overview {
+      h5 {
+        &.disableTopPadding {
+          padding-top: 8px;
+        }
+        &.hasBorder {
+          border-top: 1px solid $grey-4;
+        }
+      }
+      app-overview-tile {
+        display: block;
+        &:not(:last-of-type) {
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+}

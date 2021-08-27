@@ -1,0 +1,51 @@
+@import "../../../../../theme/colours.scss";
+@import '../../../../../theme/breakpoints.scss';
+
+ion-content {
+  --overflow: hidden;
+
+  section {
+    height: 100%;
+
+    .back-button {
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      left: 24px;
+    }
+
+    .legal-container {
+
+      height: calc(100vh - 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .legal-copy {
+        max-width: 296px;
+        text-align: center;
+
+        h3, p {
+          color: $first-place-blue;
+        }
+
+        h3 {
+          padding-bottom: 40px;
+        }
+      }
+
+    }
+
+    .next-btn {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      padding: 0 32px 56px;
+      bottom: 0;
+      @include small-mobile {
+        padding-bottom: 28px;
+      }
+    }
+  }
+}
